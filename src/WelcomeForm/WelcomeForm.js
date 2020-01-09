@@ -43,10 +43,12 @@ class WelcomeForm extends Component {
         <NavBtn
           text='Study'
           link='/study'
+          user={this.state.name}
         />
         <NavBtn
           text='Quiz'
           link='/quiz'
+          user={this.state.name}
         />
       </div>
     )
