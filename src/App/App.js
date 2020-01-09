@@ -4,6 +4,7 @@ import colormap from '../images/africa-map-countries-capitals-color.jpg'
 import './App.css';
 import { fetchCountryData } from '../apiCalls.js';
 import { cleanData } from '../util';
+import WelcomeForm from '../WelcomeForm/WelcomeForm';
 
 class App extends Component {
 
@@ -33,6 +34,7 @@ class App extends Component {
             Learn React
           </a>
         </header>
+        <WelcomeForm/>
       </div>
     );
   }
