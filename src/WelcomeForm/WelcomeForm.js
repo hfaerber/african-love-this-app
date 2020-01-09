@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './WelcomeForm.css';
+import NavBtn from '../NavBtn/NavBtn';
 
 class WelcomeForm extends Component {
   constructor() {
@@ -39,7 +40,14 @@ class WelcomeForm extends Component {
             Deeply ashamed of my lack of knowledge around World Geography and ready to change that
           </label>
         </div>
-
+        <NavBtn
+          text='Study'
+          link='/link'
+        />
+        <NavBtn
+          text='Quiz'
+          link='/link'
+        />
       </div>
     )
   }
