@@ -4,10 +4,11 @@ import './NavBtn.css';
 import { updateUser } from '../actions';
 import { connect } from 'react-redux';
 
-export const NavBtn = ({ text, link, user }) => {
+export const NavBtn = ({ text, link, user, updateUser }) => {
   return(
     <Link to={link}>
-      <button className='button-nav' id={text} onClick={(user) => updateUser(user)}>
+      <button type='button' className='button-nav' id={text} 
+        onClick={() => updateUser(user)}>
         {text}
       </button>
     </Link>
