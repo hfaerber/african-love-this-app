@@ -5,9 +5,14 @@ class WelcomeForm extends Component {
   constructor() {
     super();
     this.state = {
-
+      name: ''
     }
   }
+
+  handleChange = (event) => {
+    this.setState({ name: event.target.value })
+  }
+
   render() {
     return(
       <div>
@@ -18,21 +23,29 @@ class WelcomeForm extends Component {
         <p>Why are you here {this.state.name ? `${this.state.name}` : ''}?</p>
         <div className='div-radio'>
           <label forhtml='bored' className='button-radio'>
-            <input type='radio' id='bored'/>Bored
+            <input type='radio' id='bored'/>
+            Bored
           </label>
           <label forhtml='egypt' className='button-radio'>
-            <input type='radio' id='egypt'/> Found out Egypt was in Africa and it blew my mind
+            <input type='radio' id='egypt'/>
+            Found out Egypt was in Africa and it blew my mind
           </label>
           <label forhtml='learn' className='button-radio'>
-            <input type='radio' id='learn'/> In college and wishing I could learn something I actually want to learn instead of my gen eds
+            <input type='radio' id='learn'/>
+            In college and wishing I could learn something I actually want to learn instead of my gen eds
           </label>
           <label forhtml='shame' className='button-radio'>
-            <input type='radio' id='shame'/> Deeply ashamed of my lack of knowledge around World Geography and ready to change that
+            <input type='radio' id='shame'/>
+            Deeply ashamed of my lack of knowledge around World Geography and ready to change that
           </label>
         </div>
+
       </div>
     )
   }
 }
 
 export default WelcomeForm;
+
+// within return i will render my NavBtn components once it is built and add onclick which navigates where you go
+// and updates the redux store with the user name

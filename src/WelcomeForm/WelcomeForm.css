@@ -1,10 +1,8 @@
 .div-radio {
   width: 50%;
-  border: 1px solid blue;
   margin: auto;
 }
 
 .button-radio {
   display: block;
-  /* text-align: left; */
 }
