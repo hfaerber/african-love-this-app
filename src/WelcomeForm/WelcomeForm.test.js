@@ -9,6 +9,7 @@ describe('WelcomeForm', () => {
     wrapper = shallow(<WelcomeForm />);
     mockEvent = { target: { value: 'test value' } };
   })
+  // add snapshot
 
   it('should invoke handleChange on change', () => {
     wrapper.instance().handleChange = jest.fn();
