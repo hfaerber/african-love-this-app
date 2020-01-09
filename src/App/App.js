@@ -19,12 +19,8 @@ class App extends Component {
 
   render () {
     return (
-      <div className="App">
+      <main className="App">
         <header className="App-header">
-          <img src={colormap} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
           <a
             className="App-link"
             href="https://reactjs.org"
@@ -35,9 +31,10 @@ class App extends Component {
           </a>
         </header>
         <WelcomeForm/>
-      </div>
+      </main>
     );
   }
 }
 
 export default App;
+// <img src={colormap} className="App-logo" alt="logo" />

@@ -18,7 +18,7 @@ class WelcomeForm extends Component {
     return(
       <div>
         <h1>Welcome!</h1>
-        <h2>This is African ♥ This App</h2>
+        <h2>This is <span className='app-title'>African ♥ This App</span></h2>
         <input type='text' className='input-name' placeholder='Enter your name'
           name='name' value={this.state.name} onChange={(event) => this.handleChange(event)} />
         <p>Why are you here {this.state.name ? `${this.state.name}` : ''}?</p>
@@ -42,11 +42,11 @@ class WelcomeForm extends Component {
         </div>
         <NavBtn
           text='Study'
-          link='/link'
+          link='/study'
         />
         <NavBtn
           text='Quiz'
-          link='/link'
+          link='/quiz'
         />
       </div>
     )
