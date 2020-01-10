@@ -5,24 +5,29 @@ import { shallow } from 'enzyme';
 
 describe('NavBtn Container', () => {
   describe('NavBar component', () => {
-    let wrapper, mockUser, mockText, mockUpdateUser;
+    let wrapper, mockUser, mockText, mockUpdateUser, mockLink;
 
     beforeEach(() => {
       mockUser = 'Ben';
       mockText = 'Study';
+      mockLink = '/study';
       mockUpdateUser = jest.fn();
       wrapper = shallow(<NavBtn
           text={mockText}
+          link={mockLink}
           user={mockUser}
           updateUser={mockUpdateUser}
         />);
     })
 
-// add snapshot tests
+    it('should match snapshot', () => {
+      expect(wrapper).toMatchSnapshot();
+    })
 
-    // it('should invoke updateUser on click', () => {
-    //
-    // })
+    it('should invoke updateUser on click', () => {
+      wrapper.find('#Study').simulate('click');
+      expect(mockUpdateUser).toHaveBeenCalledWith(mockUser);
+    })
   })
 
   describe('mapDispatchToProps', () => {
