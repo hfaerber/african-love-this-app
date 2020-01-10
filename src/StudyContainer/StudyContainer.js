@@ -4,7 +4,7 @@ import CountryCard from '../CountryCard/CountryCard';
 import colormap from '../images/africa-map-countries-capitals-color.jpg'
 import { connect } from 'react-redux';
 
-const StudyContainer = ({ countries }) => {
+export const StudyContainer = ({ countries }) => {
 
   const countryCards = countries.map(country => {
       return(<CountryCard
