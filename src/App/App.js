@@ -5,6 +5,7 @@ import './App.css';
 import { fetchCountryData } from '../apiCalls.js';
 import { cleanData } from '../util';
 import WelcomeForm from '../WelcomeForm/WelcomeForm';
+import { Route } from 'react-router-dom';
 
 class App extends Component {
 
@@ -23,7 +24,7 @@ class App extends Component {
         <header className="App-header">
           African ♥️ This App
         </header>
-        <WelcomeForm/>
+        <Route exact path='/' component={WelcomeForm} />
       </main>
     );
   }
