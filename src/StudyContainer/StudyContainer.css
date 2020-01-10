@@ -1,0 +1,10 @@
+.div-map-image {
+  border: 4px solid purple;
+  width: 100%;
+  text-align: left;
+}
+
+.img-map {
+  max-width: 40%;
+  border: 4px solid red;
+}

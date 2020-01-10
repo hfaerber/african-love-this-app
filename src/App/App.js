@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import logo from '../logo.svg';
-import colormap from '../images/africa-map-countries-capitals-color.jpg'
 import './App.css';
 import { fetchCountryData } from '../apiCalls.js';
 import { cleanData } from '../util';
 import WelcomeForm from '../WelcomeForm/WelcomeForm';
+import StudyContainer from '../StudyContainer/StudyContainer';
 import { Route } from 'react-router-dom';
 
 class App extends Component {
@@ -25,6 +25,7 @@ class App extends Component {
           African ♥️ This App
         </header>
         <Route exact path='/' component={WelcomeForm} />
+        <Route path='/study' component={StudyContainer} />
       </main>
     );
   }
