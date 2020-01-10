@@ -12,6 +12,7 @@ const StudyContainer = ({ countries }) => {
         name={country.name}
         capital={country.capital}
         region={country.subregion}
+        needsStudied={country.needsStudied}
       />)
     })
 

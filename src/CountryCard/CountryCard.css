@@ -6,16 +6,22 @@
 }
 
 .country-name {
-  font-size: 1.5em;
+  font-size: 1em;
   font-weight: bold;
 }
 
 .country-capital {
-  font-size: 1.2em;
+  font-size: .9em;
   font-weight: bold;
 }
 
 .country-region {
+  font-size: .7em;
   font-style: italic;
   color: lightgrey;
+}
+
+.empty-checkbox {
+  width: 25px;
+  /* display:none; */
 }
