@@ -9,7 +9,8 @@ describe('cleanData', () => {
     let expected = [{
       name: "Algeria",
       capital: "Algiers",
-      subregion: "Northern Africa"
+      subregion: "Northern Africa",
+      needsStudied: true
     }];
     expect(cleanData(mockData)).toEqual(expected);
   })
