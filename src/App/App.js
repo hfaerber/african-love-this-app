@@ -8,7 +8,7 @@ import { Route } from 'react-router-dom';
 import { updateCountries } from '../actions';
 import { connect } from 'react-redux';
 
-class App extends Component {
+export class App extends Component {
 
   componentDidMount() {
     fetchCountryData()
