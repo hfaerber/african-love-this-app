@@ -5,8 +5,7 @@ import StudyForm from '../StudyForm/StudyForm';
 import colormap from '../images/africa-map-countries-capitals-color.jpg'
 import { connect } from 'react-redux';
 
-export const StudyContainer = ({ countries }) => {
-  let selectedFilter = 'Still Learning';
+export const StudyContainer = ({ countries, selectedFilter }) => {
 
   const filter = () => {
     if (selectedFilter === 'Still Learning') {
@@ -18,9 +17,9 @@ export const StudyContainer = ({ countries }) => {
   }
 }
 
-  console.log(filter());
+  console.log('filter', filter());
 
-  const countryCards = countries.map(country => {
+  const countryCards = filter().map(country => {
       return(<CountryCard
         key={country.name}
         name={country.name}
@@ -43,7 +42,8 @@ export const StudyContainer = ({ countries }) => {
 }
 
 export const mapStateToProps = state => ({
-  countries: state.countries
+  countries: state.countries,
+  selectedFilter: state.selectedFilter
 })
 
 export default connect(mapStateToProps, null)(StudyContainer);
