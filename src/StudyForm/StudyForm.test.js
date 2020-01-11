@@ -5,7 +5,7 @@ import { shallow } from 'enzyme';
 
 describe('StudyForm', () => {
   describe('StudyForm component', () => {
-    let wrapper, mockEvent, mockUpdateSelectedFilter, mockUpdateSearchQuery;
+    let wrapper, mockEvent, mockUpdateSelectedFilter, mockUpdateSearchQuery, expectedLocalState;
 
     beforeEach(() => {
       mockUpdateSelectedFilter = jest.fn();
@@ -15,6 +15,7 @@ describe('StudyForm', () => {
         updateSearchQuery={mockUpdateSearchQuery}
       />);
       mockEvent = { target: { value: 'testValue' }};
+      expectedLocalState = 'testValue';
     });
 
     it('should matchSnapshot', () => {
@@ -41,9 +42,8 @@ describe('StudyForm', () => {
     })
 
     it('should update local state when handleSelection is invoked', () => {
-      const expected = 'testValue';
       wrapper.instance().handleSelection(mockEvent);
-      expect(wrapper.state('selectedFilter')).toEqual(expected);
+      expect(wrapper.state('selectedFilter')).toEqual(expectedLocalState);
     })
 
     it('should invoke updateSelectedFilter prop when handleSelection is invoked', () => {
@@ -51,7 +51,8 @@ describe('StudyForm', () => {
     })
 
     it('should update local state when handleSearch is invoked', () => {
-
+      wrapper.instance().handleSearch(mockEvent);
+      expect(wrapper.state('query')).toEqual(expectedLocalState);
     })
 
     it('should invoke updateSearchQuery prop when handleSearch is invoked', () => {
@@ -59,7 +60,9 @@ describe('StudyForm', () => {
     })
 
     it('should update local state when clearSearch is invoked', () => {
-
+      expectedLocalState = '';
+      wrapper.instance().clearSearch();
+      expect(wrapper.state('query')).toEqual(expectedLocalState);
     })
 
     it('should invoke updateSearchQuery when clearSearch is invoked', () => {
