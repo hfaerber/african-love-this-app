@@ -48,5 +48,15 @@ describe('actions', () => {
       };
       const result = actions.updateSelectedFilter(filter);
       expect(result).toEqual(expectedAction);
+  });
+
+  it('should return an object with a query string and a type of UPDATE_SEARCH_QUERY', () => {
+    const query = 'Benin';
+    const expectedAction = {
+      type: 'UPDATE_SEARCH_QUERY',
+      query: 'Benin'
+    };
+    const result = actions.updateSearchQuery(query);
+    expect(result).toEqual(expectedAction);
   })
 })

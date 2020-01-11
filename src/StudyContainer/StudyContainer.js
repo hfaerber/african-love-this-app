@@ -6,27 +6,39 @@ import colormap from '../images/africa-map-countries-capitals-color.jpg'
 import { connect } from 'react-redux';
 
 export const StudyContainer = ({ countries, selectedFilter }) => {
+  let query = 'Angola';
+  // could move filter to UTIL if passing props as args works
 
-  const filter = () => {
-    if (selectedFilter === 'Still Learning') {
-    return countries.filter(c => c.needsStudied)
-  } else if (selectedFilter === 'Got It!') {
-    return countries.filter(c => !c.needsStudied)
-  } else {
-    return countries
+  const getQueryCard = countries.reduce((acc, c) => {
+    if (c.name.toLowerCase().includes(query.toLowerCase())) {
+      acc.push(c)
+    }
+    return acc
+  }, [])
+
+  console.log('query', getQueryCard)
+
+  const filter = (countries, selectedFilter) => {
+    return selectedFilter === 'Still Learning' ?
+      countries.filter(c => c.needsStudied)
+      : selectedFilter === 'Got It!' ? countries.filter(c => !c.needsStudied)
+      : countries
   }
-}
 
-  console.log('filter', filter());
+  console.log('filter', filter(countries, selectedFilter));
 
-  const countryCards = filter().map(country => {
-      return(<CountryCard
-        key={country.name}
-        name={country.name}
-        capital={country.capital}
-        region={country.subregion}
-        needsStudied={country.needsStudied}
-      />)
+  let countriesToDisplay = getQueryCard ? getQueryCard
+      : filter(countries, selectedFilter);
+
+  const countryCards =
+    countriesToDisplay.map(country => {
+        return(<CountryCard
+          key={country.name}
+          name={country.name}
+          capital={country.capital}
+          region={country.subregion}
+          needsStudied={country.needsStudied}
+        />)
     })
 
   return (
@@ -49,4 +61,3 @@ export const mapStateToProps = state => ({
 export default connect(mapStateToProps, null)(StudyContainer);
 
 // display map and give button click fn to enlarge
-// display <filter and search container> (stateful?)

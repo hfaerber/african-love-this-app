@@ -6,7 +6,8 @@ import { selectedFilterReducer } from './selectedFilterReducer';
 const rootReducer = combineReducers({
   user: userReducer,
   countries: countriesReducer,
-  selectedFilter: selectedFilterReducer
+  selectedFilter: selectedFilterReducer,
+  searchQuery: searchQueryReducer
 });
 
 export default rootReducer;

@@ -21,6 +21,14 @@ export class StudyForm extends Component {
     this.setState({ query: event.target.value });
   }
 
+  handleClick = () => {
+
+  }
+
+  clearSearch = () => {
+
+  }
+
   render() {
     return(
       <div>
@@ -38,6 +46,10 @@ export class StudyForm extends Component {
             className='input-search' value={this.state.query}
             onChange={(event) => this.handleSearch(event)}/>
         </label>
+        <button className='button-search' onClick={this.handleClick}>
+        Search</button>
+        <button className='button-clear-search' onClick={this.clearSearch}>
+        Clear Search</button>
       </div>
     )
   }
