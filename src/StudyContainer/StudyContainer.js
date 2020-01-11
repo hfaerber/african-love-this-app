@@ -1,10 +1,24 @@
 import React from 'react';
 import './StudyContainer.css';
 import CountryCard from '../CountryCard/CountryCard';
+import StudyForm from '../StudyForm/StudyForm';
 import colormap from '../images/africa-map-countries-capitals-color.jpg'
 import { connect } from 'react-redux';
 
 export const StudyContainer = ({ countries }) => {
+  let selectedFilter = 'Still Learning';
+
+  const filter = () => {
+    if (selectedFilter === 'Still Learning') {
+    return countries.filter(c => c.needsStudied)
+  } else if (selectedFilter === 'Got It!') {
+    return countries.filter(c => !c.needsStudied)
+  } else {
+    return countries
+  }
+}
+
+  console.log(filter());
 
   const countryCards = countries.map(country => {
       return(<CountryCard
@@ -21,6 +35,7 @@ export const StudyContainer = ({ countries }) => {
       <img src={colormap} className="img-map"
         alt="map of africa with capital cities" />
       <section className='section-card-display'>
+        <StudyForm />
         {countryCards}
       </section>
     </div>
@@ -34,5 +49,4 @@ export const mapStateToProps = state => ({
 export default connect(mapStateToProps, null)(StudyContainer);
 
 // display map and give button click fn to enlarge
-// create and display <country cards/>
 // display <filter and search container> (stateful?)
