@@ -47,7 +47,8 @@ describe('StudyForm', () => {
     })
 
     it('should invoke updateSelectedFilter prop when handleSelection is invoked', () => {
-
+      wrapper.instance().handleSelection(mockEvent);
+      expect(mockUpdateSelectedFilter).toHaveBeenCalledWith(expectedLocalState);
     })
 
     it('should update local state when handleSearch is invoked', () => {
@@ -56,7 +57,8 @@ describe('StudyForm', () => {
     })
 
     it('should invoke updateSearchQuery prop when handleSearch is invoked', () => {
-
+      wrapper.instance().handleSearch(mockEvent);
+      expect(mockUpdateSearchQuery).toHaveBeenCalledWith(expectedLocalState);
     })
 
     it('should update local state when clearSearch is invoked', () => {
@@ -66,7 +68,8 @@ describe('StudyForm', () => {
     })
 
     it('should invoke updateSearchQuery when clearSearch is invoked', () => {
-
+      wrapper.instance().clearSearch();
+      expect(mockUpdateSearchQuery).toHaveBeenCalledWith('');
     })
 
   });
