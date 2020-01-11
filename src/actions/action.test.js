@@ -38,4 +38,15 @@ describe('actions', () => {
       const result = actions.toggleStudyStatus(name);
       expect(result).toEqual(expectedAction);
   });
+
+  it('should return an object with a filter string and a type of UPDATE_SELECTED_FILTER',
+    () => {
+      const filter = 'Still Learning';
+      const expectedAction = {
+        type: 'UPDATE_SELECTED_FILTER',
+        filter: 'Still Learning'
+      };
+      const result = actions.updateSelectedFilter(filter);
+      expect(result).toEqual(expectedAction);
+  })
 })

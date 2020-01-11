@@ -10,6 +10,6 @@ export const countriesReducer = (state = [], action) => {
       })
 
     default:
-      return state;
+      return state
   };
 };
