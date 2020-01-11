@@ -7,7 +7,8 @@ export class StudyForm extends Component {
   constructor() {
     super();
       this.state = {
-        selectedFilter: 'All'
+        selectedFilter: 'All',
+        query: ''
       }
   }
 
@@ -16,25 +17,28 @@ export class StudyForm extends Component {
     this.props.updateSelectedFilter( event.target.value );
   }
 
-    // user action/dispatch to update the selectedFilter key in STORE
-    // map in StudyContainer will rely on conditional to render based on selectedFilter key in state
-    // selectedCards key in STORE will be passed to StudyContainer and .map()
-    // will be run on that array so its creating and displaying cards for the selection
-// WILL IT RERENDER WITH SELECTEDFILTER LOCAL STATE AS ALL DEFAULT?
-// MAYBE THAT SHOULD ALSO BE A KEY IN STORE THAT IS PASSED AS PROP SO IT DOESN'T
-// DEFAULT BACK TO ALL ON EACH RE-RENDER???
+  handleSearch = (event) => {
+    this.setState({ query: event.target.value });
+  }
 
   render() {
     return(
-      <label forhtml="display-cards-options" className='label-show'>Show:
-        <select name="show" id="display-cards-options" className='select-show'
-          value={this.state.selectedFilter}
-          onChange={(event) => this.handleSelection(event)}>
-          <option value="All">All</option>
-          <option value="Still Learning">Still Learning</option>
-          <option value="Got It!">Got It!</option>
-        </select>
-      </label>
+      <div>
+        <label forhtml="display-cards-options" className='label-show'>Show:
+          <select name="show" id="display-cards-options" className='select-show'
+            value={this.state.selectedFilter}
+            onChange={(event) => this.handleSelection(event)}>
+            <option value="All">All</option>
+            <option value="Still Learning">Still Learning</option>
+            <option value="Got It!">Got It!</option>
+          </select>
+        </label>
+        <label forhtml="search-cards" className='label-search'>Search:
+          <input type='search' name='query' placeholder='Search Country By Name'
+            className='input-search' value={this.state.query}
+            onChange={(event) => this.handleSearch(event)}/>
+        </label>
+      </div>
     )
   }
 }

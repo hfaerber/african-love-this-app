@@ -1,7 +1,9 @@
-.label-show {
+.label-show,
+.label-search {
   font-size: .8em;
 }
 
-.select-show {
+.select-show,
+.input-search {
   margin-left: 5px;
 }
