@@ -8,6 +8,8 @@ describe('StudyForm', () => {
     let wrapper, mockEvent, mockUpdateSelectedFilter, mockUpdateSearchQuery;
 
     beforeEach(() => {
+      mockUpdateSelectedFilter = jest.fn();
+      mockUpdateSearchQuery = jest.fn();
       wrapper = shallow(<StudyForm
         updateSelectedFilter={mockUpdateSelectedFilter}
         updateSearchQuery={mockUpdateSearchQuery}
@@ -39,7 +41,9 @@ describe('StudyForm', () => {
     })
 
     it('should update local state when handleSelection is invoked', () => {
-
+      const expected = 'testValue';
+      wrapper.instance().handleSelection(mockEvent);
+      expect(wrapper.state('selectedFilter')).toEqual(expected);
     })
 
     it('should invoke updateSelectedFilter prop when handleSelection is invoked', () => {

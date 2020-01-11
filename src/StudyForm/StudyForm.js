@@ -13,8 +13,9 @@ export class StudyForm extends Component {
   }
 
   handleSelection = (event) => {
+    const { updateSelectedFilter } = this.props;
     this.setState({ selectedFilter: event.target.value });
-    this.props.updateSelectedFilter( event.target.value );
+    updateSelectedFilter( event.target.value );
   }
 
   handleSearch = (event) => {
