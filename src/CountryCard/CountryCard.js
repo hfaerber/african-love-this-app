@@ -23,9 +23,3 @@ export const mapDispatchToProps = dispatch => ({
 })
 
 export default connect(null, mapDispatchToProps)(CountryCard);
-// <button>Still Learning</button>
-// <img src={emptybox} className='empty-checkbox' alt='empty checkbox' />
-// User clicks on got it
-// 1 )style changes to fade that card out
-// 2)  update status in the store for that country element
-// Need action creator for "Toggle_studyStatus"

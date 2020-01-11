@@ -13,12 +13,16 @@ describe('StudyContainer', () => {
       ];
       wrapper = shallow(<StudyContainer
         countries={mockCountries}
+        selectedFilter='All'
+        searchQuery=''
         />)
     })
 
     it('should match snapshot', () => {
       expect(wrapper).toMatchSnapshot;
     })
+
+// it('should invoke filter() if searchQuery is empty string')
   });
 
   describe('mapStateToProps', () => {
@@ -26,13 +30,19 @@ describe('StudyContainer', () => {
       {name: "Algeria", capital: "Algiers", subregion: "Northern Africa", needsStudied: true},
       {name: "Benin", capital: "Porto-Novo", subregion: "Western Africa", needsStudied: true},
     ];
-// test that we only get the countries prop from the store
-    it('should return an object with the countries array', () => {
+
+    it('should return an object with the correct props', () => {
       const mockState = {
         user: 'Ben',
-        countries: mockCountries };
+        countries: mockCountries,
+        selectedFilter: 'All',
+        searchQuery: ''
+      };
       const expected = {
-        countries: mockCountries };
+        countries: mockCountries,
+        selectedFilter: 'All',
+        searchQuery: ''
+      };
       const mappedProps = mapStateToProps(mockState);
       expect(mappedProps).toEqual(expected);
     })

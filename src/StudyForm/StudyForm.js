@@ -44,17 +44,12 @@ export class StudyForm extends Component {
             className='input-search' value={this.state.query}
             onChange={(event) => this.handleSearch(event)}/>
         </label>
-
         <button className='button-clear-search' onClick={this.clearSearch}>
         Clear Search</button>
       </div>
     )
   }
 }
-
-// export const mapStateToProps = state => ({
-//
-// })
 
 export const mapDispatchToProps = dispatch => ({
   updateSelectedFilter: filter => dispatch(updateSelectedFilter(filter)),
