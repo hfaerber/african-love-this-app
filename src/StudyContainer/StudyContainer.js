@@ -5,18 +5,14 @@ import StudyForm from '../StudyForm/StudyForm';
 import colormap from '../images/africa-map-countries-capitals-color.jpg'
 import { connect } from 'react-redux';
 
-export const StudyContainer = ({ countries, selectedFilter }) => {
-  let query = 'Angola';
-  // could move filter to UTIL if passing props as args works
+export const StudyContainer = ({ countries, selectedFilter, searchQuery }) => {
 
   const getQueryCard = countries.reduce((acc, c) => {
-    if (c.name.toLowerCase().includes(query.toLowerCase())) {
+    if (c.name.toLowerCase().includes(searchQuery.toLowerCase())) {
       acc.push(c)
     }
     return acc
   }, [])
-
-  console.log('query', getQueryCard)
 
   const filter = (countries, selectedFilter) => {
     return selectedFilter === 'Still Learning' ?
@@ -25,9 +21,7 @@ export const StudyContainer = ({ countries, selectedFilter }) => {
       : countries
   }
 
-  console.log('filter', filter(countries, selectedFilter));
-
-  let countriesToDisplay = getQueryCard ? getQueryCard
+  let countriesToDisplay = searchQuery ? getQueryCard
       : filter(countries, selectedFilter);
 
   const countryCards =
@@ -55,7 +49,8 @@ export const StudyContainer = ({ countries, selectedFilter }) => {
 
 export const mapStateToProps = state => ({
   countries: state.countries,
-  selectedFilter: state.selectedFilter
+  selectedFilter: state.selectedFilter,
+  searchQuery: state.searchQuery
 })
 
 export default connect(mapStateToProps, null)(StudyContainer);

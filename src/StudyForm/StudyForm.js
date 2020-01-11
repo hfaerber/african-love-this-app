@@ -1,7 +1,7 @@
 import React, {Component}  from 'react';
 import './StudyForm.css';
 import { connect } from 'react-redux';
-import { updateSelectedFilter } from '../actions';
+import { updateSelectedFilter, updateSearchQuery } from '../actions';
 
 export class StudyForm extends Component {
   constructor() {
@@ -19,14 +19,12 @@ export class StudyForm extends Component {
 
   handleSearch = (event) => {
     this.setState({ query: event.target.value });
-  }
-
-  handleClick = () => {
-
+    this.props.updateSearchQuery(event.target.value);
   }
 
   clearSearch = () => {
-
+    this.setState({ query: '' });
+    this.props.updateSearchQuery('');
   }
 
   render() {
@@ -41,13 +39,12 @@ export class StudyForm extends Component {
             <option value="Got It!">Got It!</option>
           </select>
         </label>
-        <label forhtml="search-cards" className='label-search'>Search:
+        <label forhtml="search-cards" className='label-search'>Search All:
           <input type='search' name='query' placeholder='Search Country By Name'
             className='input-search' value={this.state.query}
             onChange={(event) => this.handleSearch(event)}/>
         </label>
-        <button className='button-search' onClick={this.handleClick}>
-        Search</button>
+
         <button className='button-clear-search' onClick={this.clearSearch}>
         Clear Search</button>
       </div>
@@ -60,7 +57,8 @@ export class StudyForm extends Component {
 // })
 
 export const mapDispatchToProps = dispatch => ({
-  updateSelectedFilter: filter => dispatch(updateSelectedFilter(filter))
+  updateSelectedFilter: filter => dispatch(updateSelectedFilter(filter)),
+  updateSearchQuery: query => dispatch(updateSearchQuery(query))
 })
 
 export default connect(null, mapDispatchToProps)(StudyForm)
