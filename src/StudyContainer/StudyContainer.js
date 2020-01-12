@@ -4,15 +4,15 @@ import CountryCard from '../CountryCard/CountryCard';
 import StudyForm from '../StudyForm/StudyForm';
 import colormap from '../images/africa-map-countries-capitals-color.jpg'
 import { connect } from 'react-redux';
-import { filter, getQueryCard } from '../util';
+import { filter, getQueryCard, countriesToDisplay } from '../util';
 
 export const StudyContainer = ({ countries, selectedFilter, searchQuery }) => {
 
-  let countriesToDisplay = searchQuery ? getQueryCard(countries, searchQuery)
-      : filter(countries, selectedFilter);
+  // let countriesToDisplay = searchQuery ? getQueryCard(countries, searchQuery)
+  //     : filter(countries, selectedFilter);
 
   const countryCards =
-    countriesToDisplay.map(country => {
+    countriesToDisplay(countries, selectedFilter, searchQuery).map(country => {
         return(<CountryCard
           key={country.name}
           name={country.name}

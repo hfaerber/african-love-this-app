@@ -1,4 +1,4 @@
-import { cleanData, filter, getQueryCard } from './util';
+import { cleanData, filter, getQueryCard, countriesToDisplay } from './util';
 
 describe('cleanData', () => {
   it('should return an array of country objects', () => {
@@ -60,4 +60,25 @@ describe('getQueryCard', () => {
     ];
     expect(getQueryCard(mockCountries, 'Alg')).toEqual(expected);
   })
+})
+
+describe('countriesToDisplay', () => {
+  let mockCountries;
+  beforeEach(() => {
+    mockCountries = [
+      {name: "Algeria", capital: "Algiers", subregion: "Northern Africa", needsStudied: true},
+      {name: "Benin", capital: "Porto-Novo", subregion: "Western Africa", needsStudied: false},
+    ];
+  });
+
+  it('should return searchQuery matches if there is a searcQuery', () => {
+    const expected = [
+      {name: "Algeria", capital: "Algiers", subregion: "Northern Africa", needsStudied: true},
+    ];
+    expect(countriesToDisplay(mockCountries, 'All', 'Alg')).toEqual(expected);
+  });
+
+  it('should return all cards if there is no seachQuery', () => {
+
+  });
 })
