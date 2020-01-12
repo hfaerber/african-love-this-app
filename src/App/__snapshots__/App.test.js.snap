@@ -17,22 +17,27 @@ exports[`AppContainer App component should match snapshot 1`] = `
     </span>
      This App
   </header>
-  <Route
-    component={[Function]}
-    exact={true}
-    path="/"
-  />
-  <Route
-    component={
-      Object {
-        "$$typeof": Symbol(react.memo),
-        "WrappedComponent": [Function],
-        "compare": null,
-        "displayName": "Connect(StudyContainer)",
-        "type": [Function],
+  <Switch>
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/"
+    />
+    <Route
+      component={
+        Object {
+          "$$typeof": Symbol(react.memo),
+          "WrappedComponent": [Function],
+          "compare": null,
+          "displayName": "Connect(StudyContainer)",
+          "type": [Function],
+        }
       }
-    }
-    path="/study"
-  />
+      path="/study"
+    />
+    <Route
+      component={[Function]}
+    />
+  </Switch>
 </main>
 `;

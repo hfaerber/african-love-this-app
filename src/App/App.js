@@ -5,7 +5,7 @@ import { cleanData } from '../util';
 import WelcomeForm from '../WelcomeForm/WelcomeForm';
 import StudyContainer from '../StudyContainer/StudyContainer';
 import NoMatch from '../NoMatch/NoMatch';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import { updateCountries, updateError, updateLoadingStatus } from '../actions';
 import { connect } from 'react-redux';
 
@@ -30,9 +30,11 @@ export class App extends Component {
         <header className="App-header">
           African <span role='img' aria-label='heart emoji' className='header-heart'>♥️</span> This App
         </header>
-        <Route exact path='/' component={WelcomeForm} />
-        <Route path='/study' component={StudyContainer} />
-        <Route component={NoMatch} />
+        <Switch>
+          <Route exact path='/' component={WelcomeForm} />
+          <Route path='/study' component={StudyContainer} />
+          <Route component={NoMatch} />
+        </Switch>
       </main>
     );
   };
