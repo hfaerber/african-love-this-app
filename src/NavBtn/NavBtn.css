@@ -1,5 +1,9 @@
 .button-nav {
-  width: 200px;
-  background-color: rebeccapurple;
+  width: 18%;
+  background-color: #ef9e69;
   font-size: 2em;
+  margin: 2% 1%;
+  border: 3px ridge #f28242;
+  border-radius: 10px;
+  cursor: pointer;
 }
