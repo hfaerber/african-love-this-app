@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppContainer App component should match snapshot 1`] = `
+<main
+  className="App"
+>
+  <header
+    className="App-header"
+  >
+    African 
+    <span
+      aria-label="heart emoji"
+      className="header-heart"
+      role="img"
+    >
+      ♥️
+    </span>
+     This App
+  </header>
+  <Route
+    component={[Function]}
+    exact={true}
+    path="/"
+  />
+  <Route
+    component={
+      Object {
+        "$$typeof": Symbol(react.memo),
+        "WrappedComponent": [Function],
+        "compare": null,
+        "displayName": "Connect(StudyContainer)",
+        "type": [Function],
+      }
+    }
+    path="/study"
+  />
+</main>
+`;

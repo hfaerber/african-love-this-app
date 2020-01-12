@@ -2,7 +2,7 @@ import React from 'react';
 import { App, mapDispatchToProps } from './App';
 import { shallow } from 'enzyme';
 import { fetchCountryData } from '../apiCalls';
-import { updateCountries } from '../actions';
+import { updateCountries, updateError, updateLoadingStatus } from '../actions';
 
 jest.mock('../apiCalls');
 
@@ -27,6 +27,10 @@ describe('AppContainer', () => {
         updateLoadingStatus={mockUpdateLoadingStatus}
       />);
     });
+
+    it('should match snapshot', () => {
+      expect(wrapper).toMatchSnapshot();
+    })
 
     it('should invoke fetchCountryData after component mounts', () => {
       expect(fetchCountryData).toHaveBeenCalled();
@@ -56,15 +60,33 @@ describe('AppContainer', () => {
   });
 
   describe('mapDispatchToProps', () => {
+    let mockDispatch, mappedProps;
+    beforeEach(()=> {
+      mockDispatch = jest.fn();
+      mappedProps = mapDispatchToProps(mockDispatch);
+    });
+
     it('should call dispatch with an updateCountries action when updateCountries is called', () => {
       const mockCountries = [
         {name: "Algeria", capital: "Algiers", subregion: "Northern Africa", needsStudied: true},
         {name: "Benin", capital: "Porto-Novo", subregion: "Western Africa", needsStudied: true},
       ];
-      const mockDispatch = jest.fn();
       const actionToDispatch = updateCountries(mockCountries);
-      const mappedProps = mapDispatchToProps(mockDispatch);
       mappedProps.updateCountries(mockCountries);
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
+    });
+
+    it('should call dispatch with an updateError action when updateError is called', () => {
+      const errorMessage = 'error';
+      const actionToDispatch = updateError(errorMessage);
+      mappedProps.updateError(errorMessage);
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
+    });
+
+    it('should call dispatch with an updateLoadingStatus action when updateLoadingStatus is called', () => {
+      const status = false;
+      const actionToDispatch = updateLoadingStatus(status);
+      mappedProps.updateLoadingStatus(status);
       expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
     })
   })
