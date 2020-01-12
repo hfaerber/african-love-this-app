@@ -5,25 +5,22 @@ import { cleanData } from '../util';
 import WelcomeForm from '../WelcomeForm/WelcomeForm';
 import StudyContainer from '../StudyContainer/StudyContainer';
 import { Route } from 'react-router-dom';
-import { updateCountries } from '../actions';
+import { updateCountries, updateError, updateLoadingStatus } from '../actions';
 import { connect } from 'react-redux';
 
 export class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      isLoading: true
-    }
-  }
 
   componentDidMount() {
     fetchCountryData()
       .then(data => {
         let countries = cleanData(data);
         console.log(countries);
-        this.setState({ isLoading: false });
+        this.props.updateLoadingStatus(false);
         this.props.updateCountries(countries);
-      }).catch(err => console.log(err))
+      }).catch(err => {
+        this.props.updateLoadingStatus(false);
+        this.props.updateError('Error loading study cards. Please refresh to try again.')
+      })
   };
 
   render () {
@@ -32,7 +29,6 @@ export class App extends Component {
         <header className="App-header">
           African <span role='img' aria-label='heart emoji' className='header-heart'>♥️</span> This App
         </header>
-        {this.state.isLoading && <div className='div-giphy'><iframe src="https://giphy.com/embed/tkJsL5AIIsg7K" className="giphy-embed" allowFullScreen></iframe></div>}
         <Route exact path='/' component={WelcomeForm} />
         <Route path='/study' component={StudyContainer} />
       </main>
@@ -41,7 +37,9 @@ export class App extends Component {
 };
 
 export const mapDispatchToProps = dispatch => ({
-  updateCountries: countries => dispatch(updateCountries(countries))
+  updateCountries: countries => dispatch(updateCountries(countries)),
+  updateError: errorMessage => dispatch(updateError(errorMessage)),
+  updateLoadingStatus: status => dispatch(updateLoadingStatus(status))
 });
 
 export default connect(null, mapDispatchToProps)(App);

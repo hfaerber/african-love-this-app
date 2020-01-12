@@ -37,3 +37,16 @@
   color: #e10000;
   margin: 1%;
 }
+.div-loader {
+  width: 100%;
+  padding: 1%;
+}
+
+.div-giphy {
+  width:13%;
+  margin: 1% 43.5%;
+}
+
+.giphy-embed {
+  width: 100%;
+}

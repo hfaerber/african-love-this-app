@@ -8,7 +8,7 @@ import { connect } from 'react-redux';
 import { filter, getQueryCard, countriesToDisplay } from '../util';
 
 export const StudyContainer = (
-  { countries, selectedFilter, searchQuery, error }) => {
+  { countries, selectedFilter, searchQuery, error, isLoading }) => {
 
   const countryCards =
     countriesToDisplay(countries, selectedFilter, searchQuery).map(country => {
@@ -25,12 +25,16 @@ export const StudyContainer = (
     <div className='div-map-image'>
     <StudyForm />
       <section className='section-card-display'>
-        {error ? <div className='div-error'>
+        {isLoading && <div className='div-loader'><h3>Loading Study Cards...</h3>
+
+        <div className='div-giphy'>
+          <iframe src="https://giphy.com/embed/tkJsL5AIIsg7K"
+            className="giphy-embed" allowFullScreen></iframe></div></div>}
+
+        {error && <div className='div-error'>
           <img src={erroricon} className='error-icon'
-            alt='error icon'/>
-          <h3 className='error-message'>
-          Error fetching country data. Please refresh to try again.
-        </h3></div> : countryCards }
+            alt='error icon'/><h3 className='error-message'>{error} </h3></div>}
+        {!error && !isLoading && countryCards}
       </section>
       <img src={colormap} className="img-map"
       alt="map of africa with capital cities" />
@@ -41,7 +45,9 @@ export const StudyContainer = (
 export const mapStateToProps = state => ({
   countries: state.countries,
   selectedFilter: state.selectedFilter,
-  searchQuery: state.searchQuery
+  searchQuery: state.searchQuery,
+  error: state.error,
+  isLoading: state.isLoading
 })
 
 export default connect(mapStateToProps, null)(StudyContainer);
