@@ -7,7 +7,6 @@ exports[`NavBtn Container NavBar component should match snapshot 1`] = `
   <button
     className="button-nav"
     id="Study"
-    onClick={[Function]}
     type="button"
   >
     Study

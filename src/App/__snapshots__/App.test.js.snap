@@ -19,7 +19,15 @@ exports[`AppContainer App component should match snapshot 1`] = `
   </header>
   <Switch>
     <Route
-      component={[Function]}
+      component={
+        Object {
+          "$$typeof": Symbol(react.memo),
+          "WrappedComponent": [Function],
+          "compare": null,
+          "displayName": "Connect(WelcomeForm)",
+          "type": [Function],
+        }
+      }
       exact={true}
       path="/"
     />

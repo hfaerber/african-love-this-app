@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import './WelcomeForm.css';
 import NavBtn from '../NavBtn/NavBtn';
+import { updateUser } from '../actions';
+import { connect } from 'react-redux';
 
-class WelcomeForm extends Component {
+export class WelcomeForm extends Component {
   constructor() {
     super();
     this.state = {
@@ -11,7 +13,8 @@ class WelcomeForm extends Component {
   }
 
   handleChange = (event) => {
-    this.setState({ name: event.target.value })
+    this.setState({ name: event.target.value });
+    this.props.updateUser(event.target.value);
   }
 
   render() {
@@ -43,19 +46,21 @@ class WelcomeForm extends Component {
         <NavBtn
           text='Study'
           link='/study'
-          user={this.state.name}
         />
         <NavBtn
           text='Quiz'
           link='/quiz'
-          user={this.state.name}
         />
       </div>
     )
   }
 }
 
-export default WelcomeForm;
+export const mapDispatchToProps = dispatch => ({
+  updateUser: user => dispatch(updateUser(user))
+})
+
+export default connect(null, mapDispatchToProps)(WelcomeForm);
 
 // within return i will render my NavBtn components once it is built and add onclick which navigates where you go
 // and updates the redux store with the user name
