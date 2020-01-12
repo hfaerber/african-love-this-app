@@ -17,7 +17,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --verbose",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -43,6 +43,11 @@
   "jest": {
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
+    ],
+    "coveragePathIgnorePatterns": [
+      "src/index.js",
+      "src/serviceWorker.js",
+      "src/reducers/index.js"
     ]
   }
 }

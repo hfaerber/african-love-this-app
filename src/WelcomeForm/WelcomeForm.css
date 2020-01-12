@@ -1,8 +1,35 @@
 .div-radio {
-  width: 50%;
+  width: 60%;
   margin: auto;
+  text-align: left;
+}
+
+.label-radio {
+  display: block;
+  line-height: 1.7;
 }
 
 .button-radio {
-  display: block;
+  margin: 0 15px 15px 15px;
+  cursor: pointer;
+}
+
+.input-name {
+  font-size: 1em;
+  margin: 4%;
+  border-radius: 3px;
+  padding-left: 5px;
+}
+
+input[type='radio'] { transform: scale(1.5); }
+
+.welcome {
+  font-size: 2em;
+  margin: 8% 0 2% 0;
+  color: #f28242;
+}
+
+.why-here {
+  font-size: 1.3em;
+  color: #f28242;
 }

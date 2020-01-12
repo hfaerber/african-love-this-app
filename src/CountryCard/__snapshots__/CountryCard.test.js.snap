@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CountryCard CountryCard component should match snapshot 1`] = `
+<section
+  className="country-card"
+>
+  <p
+    className="country-name"
+  >
+    Benin
+  </p>
+  <p
+    className="country-capital"
+  >
+    Capital of Benin
+  </p>
+  <p
+    className="country-region"
+  >
+    Region of Benin
+  </p>
+  <button
+    className="button-study-status"
+    onClick={[Function]}
+  >
+    Got It!
+  </button>
+</section>
+`;
+
+exports[`CountryCard CountryCard component should match snapshot when needsStudied is false 1`] = `
+<section
+  className="country-card"
+>
+  <p
+    className="country-name"
+  />
+  <p
+    className="country-capital"
+  />
+  <p
+    className="country-region"
+  />
+  <button
+    className="button-study-status"
+    onClick={[Function]}
+  >
+    Still Learning
+  </button>
+</section>
+`;
