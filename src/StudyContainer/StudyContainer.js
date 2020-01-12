@@ -35,6 +35,9 @@ export const StudyContainer = (
           <img src={erroricon} className='error-icon'
             alt='error icon'/><h3 className='error-message'>{error} </h3></div>}
         {!error && !isLoading && countryCards}
+        {console.log('countrycards', countryCards)}
+        {!countryCards.length && <div className="div-no-match">
+          <h3 className='h3-no-match'>No matches found</h3></div>}
       </section>
       <img src={colormap} className="img-map"
       alt="map of africa with capital cities" />

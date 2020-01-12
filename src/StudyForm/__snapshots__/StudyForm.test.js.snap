@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`StudyForm StudyForm component should matchSnapshot 1`] = `
-<div>
+<div
+  className="div-filter-search-form"
+>
   <label
     className="label-show"
     forhtml="display-cards-options"

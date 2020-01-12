@@ -50,3 +50,15 @@
 .giphy-embed {
   width: 100%;
 }
+.div-no-match {
+  border: 1px solid whitesmoke;
+  border-radius: 3px;
+  text-align: center;
+  padding: 36px;
+  width: 19.2%;
+  margin: 1% auto;
+}
+
+.h3-no-match {
+font-size: .9em;
+}
