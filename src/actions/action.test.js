@@ -1,7 +1,7 @@
 import * as actions from '../actions';
 
 describe('actions', () => {
-  it('should return a string with the passed in name and a type of UPDATE_USER',
+  it('should return an object with the passed in name and a type of UPDATE_USER',
     () => {
       const name = 'Ben';
       const expectedAction = {
@@ -57,6 +57,26 @@ describe('actions', () => {
       query: 'Benin'
     };
     const result = actions.updateSearchQuery(query);
+    expect(result).toEqual(expectedAction);
+  });
+
+  it('should return an object with a status and a type of UPDATE_LOADING_STATUS', () => {
+    const status = false;
+    const expectedAction = {
+      type: 'UPDATE_LOADING_STATUS',
+      status: false
+    };
+    const result = actions.updateLoadingStatus(status);
+    expect(result).toEqual(expectedAction);
+  });
+
+  it('should return an object with an error message and a type of UPDATE_ERROR', () => {
+    const errorMessage = 'Error fetching data for study cards. Please try again.'
+    const expectedAction = {
+      type: 'UPDATE_ERROR',
+      errorMessage: 'Error fetching data for study cards. Please try again.'
+    };
+    const result = actions.updateError(errorMessage);
     expect(result).toEqual(expectedAction);
   })
 })

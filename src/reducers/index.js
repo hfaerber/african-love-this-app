@@ -8,7 +8,9 @@ const rootReducer = combineReducers({
   user: userReducer,
   countries: countriesReducer,
   selectedFilter: selectedFilterReducer,
-  searchQuery: searchQueryReducer
+  searchQuery: searchQueryReducer,
+  isLoading: isLoadingReducer,
+  error: errorReducer
 });
 
 export default rootReducer;
