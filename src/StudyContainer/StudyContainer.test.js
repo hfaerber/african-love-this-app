@@ -47,6 +47,17 @@ describe('StudyContainer', () => {
         />);
       expect(wrapper).toMatchSnapshot();
     });
+
+    it('should match snapshot when no cards found to display', () => {
+      wrapper = shallow(<StudyContainer
+        countries={[]}
+        selectedFilter='All'
+        searchQuery=''
+        error=''
+        isLoading={false}
+        />);
+      expect(wrapper).toMatchSnapshot();
+    })
   });
 
   describe('mapStateToProps', () => {

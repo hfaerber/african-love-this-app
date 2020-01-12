@@ -25,17 +25,15 @@ export const StudyContainer = (
     <div className='div-map-image'>
     <StudyForm />
       <section className='section-card-display'>
-        {isLoading && <div className='div-loader'><h3>Loading Study Cards...</h3>
-
-        <div className='div-giphy'>
-          <iframe src="https://giphy.com/embed/tkJsL5AIIsg7K"
-            className="giphy-embed" allowFullScreen></iframe></div></div>}
-
+        {isLoading && <div className='div-loader'>
+          <h3>Loading Study Cards...</h3>
+          <div className='div-giphy'>
+            <iframe src="https://giphy.com/embed/tkJsL5AIIsg7K"
+              className="giphy-embed" allowFullScreen></iframe></div></div>}
         {error && <div className='div-error'>
           <img src={erroricon} className='error-icon'
             alt='error icon'/><h3 className='error-message'>{error} </h3></div>}
         {!error && !isLoading && countryCards}
-        {console.log('countrycards', countryCards)}
         {!countryCards.length && <div className="div-no-match">
           <h3 className='h3-no-match'>No matches found</h3></div>}
       </section>

@@ -19,12 +19,16 @@ exports[`CountryCard CountryCard component should match snapshot 1`] = `
   >
     Region of Benin
   </p>
-  <button
-    className="button-study-status"
-    onClick={[Function]}
+  <div
+    className="div-status"
   >
-    Got It!
-  </button>
+    <button
+      className="button-study-status"
+      onClick={[Function]}
+    >
+      Got It!
+    </button>
+  </div>
 </section>
 `;
 
@@ -41,11 +45,20 @@ exports[`CountryCard CountryCard component should match snapshot when needsStudi
   <p
     className="country-region"
   />
-  <button
-    className="button-study-status"
-    onClick={[Function]}
+  <div
+    className="div-status"
   >
-    Still Learning
-  </button>
+    <button
+      className="button-study-status"
+      onClick={[Function]}
+    >
+      Still Learning
+    </button>
+    <img
+      alt="checked checkbox"
+      className="img-checkbox"
+      src="check-box-checked.svg"
+    />
+  </div>
 </section>
 `;

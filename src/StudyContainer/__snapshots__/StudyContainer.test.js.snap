@@ -65,6 +65,32 @@ exports[`StudyContainer StudyContainer component should match snapshot when isLo
 </div>
 `;
 
+exports[`StudyContainer StudyContainer component should match snapshot when no cards found to display 1`] = `
+<div
+  className="div-map-image"
+>
+  <Connect(StudyForm) />
+  <section
+    className="section-card-display"
+  >
+    <div
+      className="div-no-match"
+    >
+      <h3
+        className="h3-no-match"
+      >
+        No matches found
+      </h3>
+    </div>
+  </section>
+  <img
+    alt="map of africa with capital cities"
+    className="img-map"
+    src="africa-map-countries-capitals-color.jpg"
+  />
+</div>
+`;
+
 exports[`StudyContainer StudyContainer component should match snapshot when not loading and no error 1`] = `
 <div
   className="div-map-image"

@@ -42,7 +42,7 @@ exports[`StudyForm StudyForm component should matchSnapshot 1`] = `
       className="input-search"
       name="query"
       onChange={[Function]}
-      placeholder="Search Country By Name"
+      placeholder="Search By Name"
       type="search"
       value=""
     />

@@ -1,8 +1,11 @@
 export const cleanData = (data) => {
   return data.map(country => {
-    return { name: country.name, capital: country.capital, subregion: country.subregion, needsStudied: true }
-  })
-}
+    return { name: country.name,
+             capital: country.capital,
+             subregion: country.subregion,
+             needsStudied: true }
+  });
+};
 
 export const filter = (countries, selectedFilter) => {
   return selectedFilter === 'Still Learning' ?
@@ -11,14 +14,16 @@ export const filter = (countries, selectedFilter) => {
     : countries
 };
 
-export const getQueryCard = (countries, searchQuery) => {return countries.reduce((acc, c) => {
-  if (c.name.toLowerCase().includes(searchQuery.toLowerCase())) {
-    acc.push(c)
-  }
-  return acc
-  }, [])
+export const getQueryCard = (countries, searchQuery) =>
+  {return countries.reduce((acc, c) => {
+    if (c.name.toLowerCase().includes(searchQuery.toLowerCase())) {
+      acc.push(c)
+    }
+    return acc
+    }, [])
 };
 
-export const countriesToDisplay = (countries, selectedFilter, searchQuery) => {return searchQuery ? getQueryCard(countries, searchQuery)
-  : filter(countries, selectedFilter)
+export const countriesToDisplay = (countries, selectedFilter, searchQuery) =>
+  {return searchQuery ? getQueryCard(countries, searchQuery)
+    : filter(countries, selectedFilter)
 };
