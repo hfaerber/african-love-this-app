@@ -8,10 +8,12 @@ jest.mock('../apiCalls');
 
 describe('AppContainer', () => {
   describe('App component', () => {
-    let wrapper, mockUpdateCountries;
+    let wrapper, mockUpdateCountries, mockUpdateError, mockUpdateLoadingStatus;
 
     beforeEach(() => {
       mockUpdateCountries = jest.fn();
+      mockUpdateError = jest.fn();
+      mockUpdateLoadingStatus = jest.fn();
       fetchCountryData.mockImplementation(() => {
         return Promise.resolve( [{
           name: "Algeria", topLevelDomain: ['test'], alpha2Code: "DZ",
@@ -21,6 +23,8 @@ describe('AppContainer', () => {
       });
       wrapper = shallow(<App
         updateCountries={mockUpdateCountries}
+        updateError={mockUpdateError}
+        updateLoadingStatus={mockUpdateLoadingStatus}
       />);
     });
 
@@ -28,18 +32,26 @@ describe('AppContainer', () => {
       expect(fetchCountryData).toHaveBeenCalled();
     });
 
-    it('should invoke updateCountries prop when fetchCountryData resolves', async () => {
+    it('should invoke updateCountries and updateLoadingStatus props when fetchCountryData resolves', async () => {
       await fetchCountryData();
       expect(mockUpdateCountries).toHaveBeenCalled();
-    })
+      expect(mockUpdateLoadingStatus).toHaveBeenCalledWith(false);
+    });
 
-    // it('should do something errorHandly if fetchCountryData rejects', () => {
-    //   fetchCountryData.mockImplementation(() => {
-    //     return Promise.reject((Error: 'got an error'))
-    //   });
-    //   fetchCountryData();
-    //   expect(console.log).toHaveBeenCalled();
-    // })
+    it('should invoke updateLoadingStatus and updateError if fetchCountryData rejects',
+      async () => {
+        fetchCountryData.mockImplementation(() => {
+          return Promise.reject(Error('got an error'))
+        });
+        wrapper = await shallow(<App
+          updateCountries={mockUpdateCountries}
+          updateError={mockUpdateError}
+          updateLoadingStatus={mockUpdateLoadingStatus}
+        />);
+        await wrapper.instance().forceUpdate();
+        expect(mockUpdateError).toHaveBeenCalledWith('Error loading study cards. Please refresh to try again.');
+        expect(mockUpdateLoadingStatus).toHaveBeenCalledWith(false);
+    });
 
   });
 

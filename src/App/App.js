@@ -14,7 +14,7 @@ export class App extends Component {
     fetchCountryData()
       .then(data => {
         let countries = cleanData(data);
-        console.log(countries);
+        // console.log(countries);
         this.props.updateLoadingStatus(false);
         this.props.updateCountries(countries);
       }).catch(err => {
