@@ -49,6 +49,15 @@ describe('filter', () => {
   })
 })
 
-// describe('getQueryCard', () => {
-//   it('should ')
-// })
+describe('getQueryCard', () => {
+  it('should return all countries whose name includes the searchQuery', () => {
+    const mockCountries = [
+      {name: "Algeria", capital: "Algiers", subregion: "Northern Africa", needsStudied: true},
+      {name: "Benin", capital: "Porto-Novo", subregion: "Western Africa", needsStudied: false},
+    ];
+    const expected = [
+      {name: "Algeria", capital: "Algiers", subregion: "Northern Africa", needsStudied: true},
+    ];
+    expect(getQueryCard(mockCountries, 'Alg')).toEqual(expected);
+  })
+})
