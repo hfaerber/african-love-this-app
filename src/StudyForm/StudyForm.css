@@ -6,4 +6,21 @@
 .select-show,
 .input-search {
   margin-left: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.button-clear-search {
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 1px 10px;
+}
+
+.div-filter-search-form {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 5px;
+  width: 100%
 }

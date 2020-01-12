@@ -1,27 +1,54 @@
 .country-card {
-  border: 1px solid pink;
+  border: 1px solid whitesmoke;
+  border-radius: 3px;
   text-align: center;
   padding: 5px;
-  width: 30%;
+  width: 19.2%;
+  margin: .4%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-height: 85vh;
 }
 
 .country-name {
-  font-size: 1em;
+  font-size: .9em;
   font-weight: bold;
+  margin: .4em;
+  color: #f28242;
 }
 
 .country-capital {
-  font-size: .9em;
+  font-size: .8em;
   font-weight: bold;
+  margin: .2em;
 }
 
 .country-region {
-  font-size: .7em;
+  font-size: .65em;
   font-style: italic;
   color: lightgrey;
+  margin: .4em;
 }
 
-.empty-checkbox {
+.button-study-status {
+  font-size: .5em;
+  width: 75%;
+  cursor: pointer;
+  background-color: whitesmoke;
+  border-radius: 3px;
+}
+
+.img-checkbox {
   width: 25px;
-  /* display:none; */
+  background-color: #ef9e69;
+  border-radius: 8px;
+  margin-left: 10%;
+}
+
+.div-status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px 10px;
 }

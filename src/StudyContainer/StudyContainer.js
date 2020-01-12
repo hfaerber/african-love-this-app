@@ -8,9 +8,6 @@ import { filter, getQueryCard, countriesToDisplay } from '../util';
 
 export const StudyContainer = ({ countries, selectedFilter, searchQuery }) => {
 
-  // let countriesToDisplay = searchQuery ? getQueryCard(countries, searchQuery)
-  //     : filter(countries, selectedFilter);
-
   const countryCards =
     countriesToDisplay(countries, selectedFilter, searchQuery).map(country => {
         return(<CountryCard
@@ -24,12 +21,12 @@ export const StudyContainer = ({ countries, selectedFilter, searchQuery }) => {
 
   return (
     <div className='div-map-image'>
-      <img src={colormap} className="img-map"
-        alt="map of africa with capital cities" />
+    <StudyForm />
       <section className='section-card-display'>
-        <StudyForm />
         {countryCards}
       </section>
+      <img src={colormap} className="img-map"
+      alt="map of africa with capital cities" />
     </div>
   )
 }
@@ -41,5 +38,3 @@ export const mapStateToProps = state => ({
 })
 
 export default connect(mapStateToProps, null)(StudyContainer);
-
-// display map and give button click fn to enlarge

@@ -23,7 +23,7 @@ export class App extends Component {
     return (
       <main className="App">
         <header className="App-header">
-          African <span role='img' aria-label='heart emoji'>♥️</span> This App
+          African <span role='img' aria-label='heart emoji' className='header-heart'>♥️</span> This App
         </header>
         <Route exact path='/' component={WelcomeForm} />
         <Route path='/study' component={StudyContainer} />

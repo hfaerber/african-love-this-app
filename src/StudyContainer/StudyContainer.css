@@ -1,20 +1,20 @@
-.div-map-image {
+/* .div-map-image {
   border: 4px solid purple;
   width: 100%;
   text-align: left;
-  display: flex;
-}
+} */
 
 .img-map {
-  max-width: 50%;
-  border: 4px solid red;
-  max-height: 59vh;
+  width: 100%;
+  /* margin: 0 1.5%; */
+  border: 6px ridge #edd351;
 }
 
 .section-card-display {
   display: flex;
   flex-wrap: wrap;
-  width: 60%;
-  border: 2px solid blue;
+  width: 100%;
+  border: 6px ridge #f28242;
   overflow: scroll;
+  max-height: 77vh;
 }

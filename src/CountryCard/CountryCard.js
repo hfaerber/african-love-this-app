@@ -3,6 +3,7 @@ import './CountryCard.css';
 import emptybox from '../images/check-box-empty.svg';
 import { toggleStudyStatus } from '../actions';
 import { connect } from 'react-redux';
+import checked from '../images/check-box-checked.svg'
 
 
 export const CountryCard = ({ name, capital, region, needsStudied, toggleStudyStatus }) => {
@@ -12,8 +13,12 @@ export const CountryCard = ({ name, capital, region, needsStudied, toggleStudySt
       <p className='country-name'>{name}</p>
       <p className='country-capital'>{capital}</p>
       <p className='country-region'>{region}</p>
-      <button className='button-study-status' onClick={() => toggleStudyStatus(name)}
-      >{buttonText}</button>
+      <div className='div-status'>
+        <button className='button-study-status' onClick={() => toggleStudyStatus(name)}
+        >{buttonText}</button>
+        {!needsStudied && <img src={checked} className="img-checkbox"
+          alt="checked checkbox" />}
+      </div>
     </section>
   )
 }

@@ -30,7 +30,7 @@ export class StudyForm extends Component {
 
   render() {
     return(
-      <div>
+      <div className='div-filter-search-form'>
         <label forhtml="display-cards-options" className='label-show'>Show:
           <select name="show" id="display-cards-options" className='select-show'
             value={this.state.selectedFilter}
@@ -41,7 +41,7 @@ export class StudyForm extends Component {
           </select>
         </label>
         <label forhtml="search-cards" className='label-search'>Search All:
-          <input type='search' name='query' placeholder='Search Country By Name'
+          <input type='search' name='query' placeholder='Search By Name'
             className='input-search' value={this.state.query}
             onChange={(event) => this.handleSearch(event)}/>
         </label>
