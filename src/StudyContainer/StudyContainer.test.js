@@ -9,7 +9,7 @@ describe('StudyContainer', () => {
     beforeEach(() => {
       mockCountries = [
         {name: "Algeria", capital: "Algiers", subregion: "Northern Africa", needsStudied: true},
-        {name: "Benin", capital: "Porto-Novo", subregion: "Western Africa", needsStudied: true},
+        {name: "Benin", capital: "Porto-Novo", subregion: "Western Africa", needsStudied: false},
       ];
       wrapper = shallow(<StudyContainer
         countries={mockCountries}
@@ -22,7 +22,6 @@ describe('StudyContainer', () => {
       expect(wrapper).toMatchSnapshot;
     })
 
-// it('should invoke filter() if searchQuery is empty string')
   });
 
   describe('mapStateToProps', () => {
