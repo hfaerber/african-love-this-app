@@ -1,6 +1,5 @@
 import React from 'react';
 import './CountryCard.css';
-import emptybox from '../images/check-box-empty.svg';
 import { toggleStudyStatus } from '../actions';
 import { connect } from 'react-redux';
 import checked from '../images/check-box-checked.svg'
