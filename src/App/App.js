@@ -4,6 +4,7 @@ import { fetchCountryData } from '../apiCalls.js';
 import { cleanData } from '../util';
 import WelcomeForm from '../WelcomeForm/WelcomeForm';
 import StudyContainer from '../StudyContainer/StudyContainer';
+import NoMatch from '../NoMatch/NoMatch';
 import { Route } from 'react-router-dom';
 import { updateCountries, updateError, updateLoadingStatus } from '../actions';
 import { connect } from 'react-redux';
@@ -31,6 +32,7 @@ export class App extends Component {
         </header>
         <Route exact path='/' component={WelcomeForm} />
         <Route path='/study' component={StudyContainer} />
+        <Route component={NoMatch} />
       </main>
     );
   };
