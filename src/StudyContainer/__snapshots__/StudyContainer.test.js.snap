@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StudyContainer StudyContainer component should match snapshot when isLoading false and error true 1`] = `
+<div
+  className="div-map-image"
+>
+  <Connect(StudyForm) />
+  <section
+    className="section-card-display"
+  >
+    <div
+      className="div-error"
+    >
+      <img
+        alt="error icon"
+        className="error-icon"
+        src="error.svg"
+      />
+      <h3
+        className="error-message"
+      >
+        There is an error
+         
+      </h3>
+    </div>
+  </section>
+  <img
+    alt="map of africa with capital cities"
+    className="img-map"
+    src="africa-map-countries-capitals-color.jpg"
+  />
+</div>
+`;
+
+exports[`StudyContainer StudyContainer component should match snapshot when isLoading is true 1`] = `
+<div
+  className="div-map-image"
+>
+  <Connect(StudyForm) />
+  <section
+    className="section-card-display"
+  >
+    <div
+      className="div-loader"
+    >
+      <h3>
+        Loading Study Cards...
+      </h3>
+      <div
+        className="div-giphy"
+      >
+        <iframe
+          allowFullScreen={true}
+          className="giphy-embed"
+          src="https://giphy.com/embed/tkJsL5AIIsg7K"
+        />
+      </div>
+    </div>
+  </section>
+  <img
+    alt="map of africa with capital cities"
+    className="img-map"
+    src="africa-map-countries-capitals-color.jpg"
+  />
+</div>
+`;
+
+exports[`StudyContainer StudyContainer component should match snapshot when not loading and no error 1`] = `
+<div
+  className="div-map-image"
+>
+  <Connect(StudyForm) />
+  <section
+    className="section-card-display"
+  >
+    <Connect(CountryCard)
+      capital="Algiers"
+      key="Algeria"
+      name="Algeria"
+      needsStudied={true}
+      region="Northern Africa"
+    />
+    <Connect(CountryCard)
+      capital="Porto-Novo"
+      key="Benin"
+      name="Benin"
+      needsStudied={false}
+      region="Western Africa"
+    />
+  </section>
+  <img
+    alt="map of africa with capital cities"
+    className="img-map"
+    src="africa-map-countries-capitals-color.jpg"
+  />
+</div>
+`;
