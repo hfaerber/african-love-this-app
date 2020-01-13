@@ -27,9 +27,6 @@ export class App extends Component {
   render () {
     return (
       <main className="App">
-        <header className="App-header">
-          African <span role='img' aria-label='heart emoji' className='header-heart'>♥️</span> This App
-        </header>
         <Switch>
           <Route exact path='/' component={WelcomeForm} />
           <Route path='/study' component={StudyContainer} />

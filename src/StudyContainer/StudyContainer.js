@@ -2,6 +2,7 @@ import React from 'react';
 import './StudyContainer.css';
 import CountryCard from '../CountryCard/CountryCard';
 import StudyForm from '../StudyForm/StudyForm';
+import NavBar from '../NavBar/NavBar';
 import colormap from '../images/africa-map-countries-capitals-color.jpg';
 import erroricon from '../images/error.svg';
 import { connect } from 'react-redux';
@@ -23,6 +24,7 @@ export const StudyContainer = (
 
   return (
     <div className='div-map-image'>
+    <NavBar />
     <StudyForm />
       <section className='section-card-display'>
         {isLoading && <div className='div-loader'>
