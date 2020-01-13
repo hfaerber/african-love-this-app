@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './QuizContainer.css';
 import { connect } from 'react-redux';
-
+import { QuizCard } from '../QuizCard/Quizcard';
 
 export class QuizContainer extends Component {
   constructor() {
@@ -26,9 +26,11 @@ export class QuizContainer extends Component {
     this.setState({ shuffledCountries: deck });
   }
 
-//
-
-
+  let quizCards = this.state.shuffleCountries.map(country => {
+    return (
+      <QuizCard />
+    )
+  })
 
   render() {
     return (
