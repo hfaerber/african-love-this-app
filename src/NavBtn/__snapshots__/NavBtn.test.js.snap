@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`NavBtn Container NavBar component should match snapshot 1`] = `
-<Link
+<NavLink
   to="/study"
 >
   <button
@@ -11,5 +11,5 @@ exports[`NavBtn Container NavBar component should match snapshot 1`] = `
   >
     Study
   </button>
-</Link>
+</NavLink>
 `;

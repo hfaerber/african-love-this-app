@@ -20,6 +20,3 @@ export const NavBar = () => {
 }
 
 export default NavBar;
-// <NavLink to='/'>Welcome Page</NavLink>
-// <NavLink to='/study'>Study</NavLink>
-// <NavLink to='/quiz'>Quiz</NavLink>

@@ -4,19 +4,6 @@ exports[`AppContainer App component should match snapshot 1`] = `
 <main
   className="App"
 >
-  <header
-    className="App-header"
-  >
-    African 
-    <span
-      aria-label="heart emoji"
-      className="header-heart"
-      role="img"
-    >
-      ♥️
-    </span>
-     This App
-  </header>
   <Switch>
     <Route
       component={

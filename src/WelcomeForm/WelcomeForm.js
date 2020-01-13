@@ -61,6 +61,3 @@ export const mapDispatchToProps = dispatch => ({
 })
 
 export default connect(null, mapDispatchToProps)(WelcomeForm);
-
-// within return i will render my NavBtn components once it is built and add onclick which navigates where you go
-// and updates the redux store with the user name

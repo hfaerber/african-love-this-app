@@ -4,6 +4,7 @@ exports[`StudyContainer StudyContainer component should match snapshot when isLo
 <div
   className="div-map-image"
 >
+  <NavBar />
   <Connect(StudyForm) />
   <section
     className="section-card-display"
@@ -36,6 +37,7 @@ exports[`StudyContainer StudyContainer component should match snapshot when isLo
 <div
   className="div-map-image"
 >
+  <NavBar />
   <Connect(StudyForm) />
   <section
     className="section-card-display"
@@ -69,6 +71,7 @@ exports[`StudyContainer StudyContainer component should match snapshot when no c
 <div
   className="div-map-image"
 >
+  <NavBar />
   <Connect(StudyForm) />
   <section
     className="section-card-display"
@@ -95,6 +98,7 @@ exports[`StudyContainer StudyContainer component should match snapshot when not 
 <div
   className="div-map-image"
 >
+  <NavBar />
   <Connect(StudyForm) />
   <section
     className="section-card-display"

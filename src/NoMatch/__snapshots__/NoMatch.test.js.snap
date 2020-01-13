@@ -1,32 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`NoMatch should match snapshot 1`] = `
-<div
-  className="div-invalid-route"
->
-  <h2
-    className="h2-invalid-route"
+<Fragment>
+  <NavBar />
+  <div
+    className="div-invalid-route"
   >
-    Wow. You really do need help with Geography.
-  </h2>
-  <h2
-    className="h2-not-found"
-  >
-    Page Not Found
-  </h2>
-  <h2
-    className="h2-invalid-route"
-  >
-    How did you even get here?
-  </h2>
-  <Link
-    to="/"
-  >
-    <button
-      className="button-invalid"
+    <h2
+      className="h2-invalid-route"
     >
-      Let's try again
-    </button>
-  </Link>
-</div>
+      Wow. You really do need help with Geography.
+    </h2>
+    <h2
+      className="h2-not-found"
+    >
+      Page Not Found
+    </h2>
+    <h2
+      className="h2-invalid-route"
+    >
+      How did you even get here?
+    </h2>
+    <Link
+      to="/"
+    >
+      <button
+        className="button-invalid"
+      >
+        Let's try again
+      </button>
+    </Link>
+  </div>
+</Fragment>
 `;
