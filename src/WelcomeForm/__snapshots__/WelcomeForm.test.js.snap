@@ -23,60 +23,6 @@ exports[`WelcomeForm should match the snapshot 1`] = `
     type="text"
     value=""
   />
-  <h4
-    className="why-here"
-  >
-    Why are you here 
-    ?
-  </h4>
-  <div
-    className="div-radio"
-  >
-    <label
-      className="label-radio"
-      forhtml="bored"
-    >
-      <input
-        className="button-radio"
-        id="bored"
-        type="radio"
-      />
-      Bored
-    </label>
-    <label
-      className="label-radio"
-      forhtml="egypt"
-    >
-      <input
-        className="button-radio"
-        id="egypt"
-        type="radio"
-      />
-      Found out Egypt was in Africa and it blew my mind
-    </label>
-    <label
-      className="label-radio"
-      forhtml="learn"
-    >
-      <input
-        className="button-radio"
-        id="learn"
-        type="radio"
-      />
-      In college and wishing I could learn something I actually want to learn instead of my gen eds
-    </label>
-    <label
-      className="label-radio"
-      forhtml="shame"
-    >
-      <input
-        className="button-radio"
-        id="shame"
-        type="radio"
-      />
-      Deeply ashamed of my lack of knowledge around World Geography and ready to change that
-    </label>
-  </div>
   <div
     className="div-welcome-page-buttons"
   >
@@ -88,6 +34,95 @@ exports[`WelcomeForm should match the snapshot 1`] = `
       link="/quiz"
       text="Quiz"
     />
+  </div>
+  <div
+    className="div-welcome-info"
+  >
+    <section
+      className="section-radio"
+    >
+      <h4
+        className="title-welcome-info"
+      >
+        Why are you here 
+        ?
+      </h4>
+      <input
+        className="button-radio"
+        id="bored"
+        type="radio"
+      />
+      <label
+        className="label-radio"
+        forhtml="bored"
+      >
+        Bored
+      </label>
+      <input
+        className="button-radio"
+        id="egypt"
+        type="radio"
+      />
+      <label
+        className="label-radio"
+        forhtml="egypt"
+      >
+        Found out Egypt was in Africa and it blew my mind
+      </label>
+      <input
+        className="button-radio"
+        id="learn"
+        type="radio"
+      />
+      <label
+        className="label-radio"
+        forhtml="learn"
+      >
+        In college and wishing I could learn something I actually want to learn instead of my gen eds
+      </label>
+      <input
+        className="button-radio"
+        id="shame"
+        type="radio"
+      />
+      <label
+        className="label-radio"
+        forhtml="shame"
+      >
+        Deeply ashamed of my lack of knowledge around World Geography and ready to change that
+      </label>
+    </section>
+    <section
+      className="section-instructions"
+    >
+      <h4
+        className="title-welcome-info"
+      >
+        What can you do here?
+      </h4>
+      <ul
+        className="list-instructions"
+      >
+        <li>
+          Study the map of Africa to learn country names and capital cities
+        </li>
+        <li>
+          Study and track learning with study cards for each country (with capital city and region)
+        </li>
+        <li>
+          Search for a specific country card by country name
+        </li>
+        <li>
+          Once a country and it's capital is commited to memory, click the 'Got It!' button to mark it as learned.
+        </li>
+        <li>
+          Card status will reset upon any refresh to force you to practice - even the ones you've learned!
+        </li>
+        <li>
+          Filter by 'Still Learning' cards, 'Got It' cards, or all cards
+        </li>
+      </ul>
+    </section>
   </div>
 </div>
 `;
@@ -115,61 +150,6 @@ exports[`WelcomeForm should match the snapshot when user has entered their name 
     type="text"
     value="Ben"
   />
-  <h4
-    className="why-here"
-  >
-    Why are you here 
-    Ben
-    ?
-  </h4>
-  <div
-    className="div-radio"
-  >
-    <label
-      className="label-radio"
-      forhtml="bored"
-    >
-      <input
-        className="button-radio"
-        id="bored"
-        type="radio"
-      />
-      Bored
-    </label>
-    <label
-      className="label-radio"
-      forhtml="egypt"
-    >
-      <input
-        className="button-radio"
-        id="egypt"
-        type="radio"
-      />
-      Found out Egypt was in Africa and it blew my mind
-    </label>
-    <label
-      className="label-radio"
-      forhtml="learn"
-    >
-      <input
-        className="button-radio"
-        id="learn"
-        type="radio"
-      />
-      In college and wishing I could learn something I actually want to learn instead of my gen eds
-    </label>
-    <label
-      className="label-radio"
-      forhtml="shame"
-    >
-      <input
-        className="button-radio"
-        id="shame"
-        type="radio"
-      />
-      Deeply ashamed of my lack of knowledge around World Geography and ready to change that
-    </label>
-  </div>
   <div
     className="div-welcome-page-buttons"
   >
@@ -181,6 +161,96 @@ exports[`WelcomeForm should match the snapshot when user has entered their name 
       link="/quiz"
       text="Quiz"
     />
+  </div>
+  <div
+    className="div-welcome-info"
+  >
+    <section
+      className="section-radio"
+    >
+      <h4
+        className="title-welcome-info"
+      >
+        Why are you here 
+        Ben
+        ?
+      </h4>
+      <input
+        className="button-radio"
+        id="bored"
+        type="radio"
+      />
+      <label
+        className="label-radio"
+        forhtml="bored"
+      >
+        Bored
+      </label>
+      <input
+        className="button-radio"
+        id="egypt"
+        type="radio"
+      />
+      <label
+        className="label-radio"
+        forhtml="egypt"
+      >
+        Found out Egypt was in Africa and it blew my mind
+      </label>
+      <input
+        className="button-radio"
+        id="learn"
+        type="radio"
+      />
+      <label
+        className="label-radio"
+        forhtml="learn"
+      >
+        In college and wishing I could learn something I actually want to learn instead of my gen eds
+      </label>
+      <input
+        className="button-radio"
+        id="shame"
+        type="radio"
+      />
+      <label
+        className="label-radio"
+        forhtml="shame"
+      >
+        Deeply ashamed of my lack of knowledge around World Geography and ready to change that
+      </label>
+    </section>
+    <section
+      className="section-instructions"
+    >
+      <h4
+        className="title-welcome-info"
+      >
+        What can you do here?
+      </h4>
+      <ul
+        className="list-instructions"
+      >
+        <li>
+          Study the map of Africa to learn country names and capital cities
+        </li>
+        <li>
+          Study and track learning with study cards for each country (with capital city and region)
+        </li>
+        <li>
+          Search for a specific country card by country name
+        </li>
+        <li>
+          Once a country and it's capital is commited to memory, click the 'Got It!' button to mark it as learned.
+        </li>
+        <li>
+          Card status will reset upon any refresh to force you to practice - even the ones you've learned!
+        </li>
+        <li>
+          Filter by 'Still Learning' cards, 'Got It' cards, or all cards
+        </li>
+      </ul>
+    </section>
   </div>
 </div>
 `;
