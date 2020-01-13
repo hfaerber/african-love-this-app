@@ -3,6 +3,7 @@ import './WelcomeForm.css';
 import NavBtn from '../NavBtn/NavBtn';
 import { updateUser } from '../actions';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 export class WelcomeForm extends Component {
   constructor() {
@@ -90,3 +91,7 @@ export const mapDispatchToProps = dispatch => ({
 })
 
 export default connect(null, mapDispatchToProps)(WelcomeForm);
+
+WelcomeForm.propTypes = {
+  updateUser: PropTypes.func
+}

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './QuizCard.css';
+import PropTypes from 'prop-types';
 
 export class QuizCard extends Component {
   constructor() {
@@ -8,7 +9,6 @@ export class QuizCard extends Component {
         capital: ''
       }
   }
-
 
   render() {
     const {name, capital, region} = this.props;
@@ -27,11 +27,12 @@ export class QuizCard extends Component {
     )
   }
 
-
-
 }
 
-
-
-
 export default QuizCard;
+
+QuizCard.propTypes = {
+  name: PropTypes.string,
+  capital: PropTypes.string,
+  region: PropTypes.string
+}

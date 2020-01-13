@@ -7,6 +7,7 @@ import colormap from '../images/africa-map-countries-capitals-color.jpg';
 import erroricon from '../images/error.svg';
 import { connect } from 'react-redux';
 import { filter, getQueryCard, countriesToDisplay } from '../util';
+import PropTypes from 'prop-types';
 
 export const StudyContainer = (
   { countries, selectedFilter, searchQuery, error, isLoading }) => {
@@ -54,3 +55,11 @@ export const mapStateToProps = state => ({
 })
 
 export default connect(mapStateToProps, null)(StudyContainer);
+
+StudyContainer.propTypes = {
+  countries: PropTypes.array,
+  selectedFilter: PropTypes.string,
+  searchQuery: PropTypes.string,
+  error: PropTypes.string,
+  isLoading: PropTypes.bool
+}

@@ -9,6 +9,7 @@ import NoMatch from '../NoMatch/NoMatch';
 import { Route, Switch } from 'react-router-dom';
 import { updateCountries, updateError, updateLoadingStatus } from '../actions';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 export class App extends Component {
 
@@ -45,6 +46,12 @@ export const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(null, mapDispatchToProps)(App);
+
+App.propTypes = {
+  updateCountries: PropTypes.func,
+  updateError: PropTypes.func,
+  updateLoadingStatus: PropTypes.func
+}
 
 // <p><a href="https://giphy.com/gifs/oc-basins-watershedsriver-tkJsL5AIIsg7K">via GIPHY</a></p>
 // Icons made by <a href="https://www.flaticon.com/authors/those-icons" title="Those Icons">Those Icons</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>

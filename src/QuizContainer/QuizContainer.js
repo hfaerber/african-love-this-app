@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import './QuizContainer.css';
 import { connect } from 'react-redux';
 import { QuizCard } from '../QuizCard/QuizCard';
+import { NavBar } from '../NavBar/NavBar';
+import PropTypes from 'prop-types';
+
 
 export class QuizContainer extends Component {
   constructor() {
@@ -40,8 +43,9 @@ export class QuizContainer extends Component {
     });
     return (
       <>
+      <NavBar />
       <button className='button-new-game'
-        onClick={this.handleShuffle}>shuffle</button>
+        onClick={this.handleShuffle}>New Game</button>
       <div className='quiz-container'>
         {quizCards}
       </div>
@@ -51,7 +55,11 @@ export class QuizContainer extends Component {
 }
 
 export const mapStateToProps = state => ({
-    countries: state.countries
+  countries: state.countries
 })
 
 export default connect(mapStateToProps, null)(QuizContainer);
+
+QuizContainer.propTypes = {
+  countries: PropTypes.array
+}
