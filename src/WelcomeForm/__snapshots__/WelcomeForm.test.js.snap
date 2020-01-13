@@ -1,0 +1,178 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WelcomeForm should match the snapshot 1`] = `
+<div>
+  <h2
+    className="welcome"
+  >
+    Welcome!
+  </h2>
+  <h3>
+    This is 
+    <span
+      className="app-title"
+    >
+      African ♥ This App
+    </span>
+  </h3>
+  <input
+    className="input-name"
+    name="name"
+    onChange={[Function]}
+    placeholder="Enter your name"
+    type="text"
+    value=""
+  />
+  <h4
+    className="why-here"
+  >
+    Why are you here 
+    ?
+  </h4>
+  <div
+    className="div-radio"
+  >
+    <label
+      className="label-radio"
+      forhtml="bored"
+    >
+      <input
+        className="button-radio"
+        id="bored"
+        type="radio"
+      />
+      Bored
+    </label>
+    <label
+      className="label-radio"
+      forhtml="egypt"
+    >
+      <input
+        className="button-radio"
+        id="egypt"
+        type="radio"
+      />
+      Found out Egypt was in Africa and it blew my mind
+    </label>
+    <label
+      className="label-radio"
+      forhtml="learn"
+    >
+      <input
+        className="button-radio"
+        id="learn"
+        type="radio"
+      />
+      In college and wishing I could learn something I actually want to learn instead of my gen eds
+    </label>
+    <label
+      className="label-radio"
+      forhtml="shame"
+    >
+      <input
+        className="button-radio"
+        id="shame"
+        type="radio"
+      />
+      Deeply ashamed of my lack of knowledge around World Geography and ready to change that
+    </label>
+  </div>
+  <NavBtn
+    link="/study"
+    text="Study"
+  />
+  <NavBtn
+    link="/quiz"
+    text="Quiz"
+  />
+</div>
+`;
+
+exports[`WelcomeForm should match the snapshot when user has entered their name 1`] = `
+<div>
+  <h2
+    className="welcome"
+  >
+    Welcome!
+  </h2>
+  <h3>
+    This is 
+    <span
+      className="app-title"
+    >
+      African ♥ This App
+    </span>
+  </h3>
+  <input
+    className="input-name"
+    name="name"
+    onChange={[Function]}
+    placeholder="Enter your name"
+    type="text"
+    value="Ben"
+  />
+  <h4
+    className="why-here"
+  >
+    Why are you here 
+    Ben
+    ?
+  </h4>
+  <div
+    className="div-radio"
+  >
+    <label
+      className="label-radio"
+      forhtml="bored"
+    >
+      <input
+        className="button-radio"
+        id="bored"
+        type="radio"
+      />
+      Bored
+    </label>
+    <label
+      className="label-radio"
+      forhtml="egypt"
+    >
+      <input
+        className="button-radio"
+        id="egypt"
+        type="radio"
+      />
+      Found out Egypt was in Africa and it blew my mind
+    </label>
+    <label
+      className="label-radio"
+      forhtml="learn"
+    >
+      <input
+        className="button-radio"
+        id="learn"
+        type="radio"
+      />
+      In college and wishing I could learn something I actually want to learn instead of my gen eds
+    </label>
+    <label
+      className="label-radio"
+      forhtml="shame"
+    >
+      <input
+        className="button-radio"
+        id="shame"
+        type="radio"
+      />
+      Deeply ashamed of my lack of knowledge around World Geography and ready to change that
+    </label>
+  </div>
+  <NavBtn
+    link="/study"
+    text="Study"
+  />
+  <NavBtn
+    link="/quiz"
+    text="Quiz"
+  />
+</div>
+`;
