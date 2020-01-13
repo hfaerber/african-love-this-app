@@ -1,0 +1,21 @@
+.quiz-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 5%;
+}
+
+.button-new-game {
+  background-color: #ef9e69;
+  border: 3px ridge #f28242;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 90px;
+  font-size: .7em;
+  margin: none;
+  text-decoration: none;
+  color: black;
+}
+
+.button-new-game:hover {
+  box-shadow: 2px 2px 2px #f28242;
+}

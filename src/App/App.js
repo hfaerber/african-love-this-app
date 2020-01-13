@@ -4,10 +4,12 @@ import { fetchCountryData } from '../apiCalls.js';
 import { cleanData } from '../util';
 import WelcomeForm from '../WelcomeForm/WelcomeForm';
 import StudyContainer from '../StudyContainer/StudyContainer';
+import QuizContainer from '../QuizContainer/QuizContainer';
 import NoMatch from '../NoMatch/NoMatch';
 import { Route, Switch } from 'react-router-dom';
 import { updateCountries, updateError, updateLoadingStatus } from '../actions';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 export class App extends Component {
 
@@ -29,6 +31,7 @@ export class App extends Component {
         <Switch>
           <Route exact path='/' component={WelcomeForm} />
           <Route path='/study' component={StudyContainer} />
+          <Route path='/quiz' component={QuizContainer} />
           <Route component={NoMatch} />
         </Switch>
       </main>
@@ -43,6 +46,12 @@ export const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(null, mapDispatchToProps)(App);
+
+App.propTypes = {
+  updateCountries: PropTypes.func,
+  updateError: PropTypes.func,
+  updateLoadingStatus: PropTypes.func
+}
 
 // <p><a href="https://giphy.com/gifs/oc-basins-watershedsriver-tkJsL5AIIsg7K">via GIPHY</a></p>
 // Icons made by <a href="https://www.flaticon.com/authors/those-icons" title="Those Icons">Those Icons</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>

@@ -2,6 +2,7 @@ import React, {Component}  from 'react';
 import './StudyForm.css';
 import { connect } from 'react-redux';
 import { updateSelectedFilter, updateSearchQuery } from '../actions';
+import PropTypes from 'prop-types';
 
 export class StudyForm extends Component {
   constructor() {
@@ -58,3 +59,8 @@ export const mapDispatchToProps = dispatch => ({
 })
 
 export default connect(null, mapDispatchToProps)(StudyForm)
+
+StudyForm.propTypes = {
+  updateSelectedFilter: PropTypes.func,
+  updateSearchQuery: PropTypes.func
+}

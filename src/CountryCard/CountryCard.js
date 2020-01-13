@@ -2,7 +2,8 @@ import React from 'react';
 import './CountryCard.css';
 import { toggleStudyStatus } from '../actions';
 import { connect } from 'react-redux';
-import checked from '../images/check-box-checked.svg'
+import checked from '../images/check-box-checked.svg';
+import PropTypes from 'prop-types';
 
 
 export const CountryCard = ({ name, capital, region, needsStudied, toggleStudyStatus }) => {
@@ -27,3 +28,11 @@ export const mapDispatchToProps = dispatch => ({
 })
 
 export default connect(null, mapDispatchToProps)(CountryCard);
+
+CountryCard.propTypes = {
+  name: PropTypes.string,
+  capital: PropTypes.string,
+  region: PropTypes.string,
+  needsStudied: PropTypes.bool,
+  toggleStudyStatus: PropTypes.func
+}
