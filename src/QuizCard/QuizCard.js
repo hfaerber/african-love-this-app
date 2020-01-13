@@ -6,25 +6,35 @@ export class QuizCard extends Component {
   constructor() {
     super();
       this.state = {
-        answers: []
+        answerClass: 'unanswered'
       }
   }
 
+  checkAnswer = (event) => {
+    if (event.target.name === this.props.capital) {
+      console.log('correct!')
+      this.setState({ answerClass: 'correct'})
+      return true
+    } else {
+      console.log('nope!')
+      this.setState({ answerClass: 'incorrect'})
+
+      return false
+    }
+  }
 
 
   render() {
-    const {name, capital, region} = this.props;
+    let answeredCardStyling = this.state.answerClass;
     return(
-      <div className='quiz-card'>
-      <h3 className='quiz-country'>Country Name:</h3>
-      <h3 className='quiz-country'>{name}</h3>
-      <input type='text' name={capital} placeholder='Enter Capital'
-        value={this.state.capital} className='quiz-guess-input'
-        onChange={event => this.setState({ capital: event.target.value })} />
-      <p className='spelling-counts'>Careful, spelling counts!</p>
-      <button className='quiz-button-check'>Check Answer</button>
-
-      <p className='region-hint hide'>This country is in {region}.</p>
+      <div className={answeredCardStyling}>
+      <h3 className='quiz-country-title'>Country Name:</h3>
+      <h3 className='quiz-country'>{this.props.name}</h3>
+      <button className='quiz-button' name={this.props.answers[0]}
+        onClick={event => this.checkAnswer(event)}>{this.props.answers[0]}</button>
+      <button className='quiz-button' name={this.props.answers[1]}
+        onClick={event => this.checkAnswer(event)}>{this.props.answers[1]}</button>
+      <p className='region-hint hide'>This country is in {this.props.region}.</p>
       </div>
     )
   }
