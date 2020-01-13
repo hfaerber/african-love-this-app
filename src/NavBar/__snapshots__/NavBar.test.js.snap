@@ -20,10 +20,12 @@ exports[`NavBar should match snapshot 1`] = `
   <div
     className="div-nav-btns"
   >
-    <NavBtn
-      link="/"
-      text="Home"
-    />
+    <Link
+      className="button-nav"
+      to="/"
+    >
+      Home
+    </Link>
     <NavBtn
       link="/study"
       text="Study"

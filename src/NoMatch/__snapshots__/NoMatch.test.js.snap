@@ -21,15 +21,6 @@ exports[`NoMatch should match snapshot 1`] = `
     >
       How did you even get here?
     </h2>
-    <Link
-      to="/"
-    >
-      <button
-        className="button-invalid"
-      >
-        Let's try again
-      </button>
-    </Link>
   </div>
 </Fragment>
 `;
