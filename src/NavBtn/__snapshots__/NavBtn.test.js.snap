@@ -13,3 +13,17 @@ exports[`NavBtn Container NavBar component should match snapshot 1`] = `
   </button>
 </NavLink>
 `;
+
+exports[`NavBtn Container should match snapshot 1`] = `
+<NavLink
+  to="/study"
+>
+  <button
+    className="button-nav"
+    id="Study"
+    type="button"
+  >
+    Study
+  </button>
+</NavLink>
+`;

@@ -3,20 +3,18 @@ import { NavBtn } from './NavBtn';
 import { shallow } from 'enzyme';
 
 describe('NavBtn Container', () => {
-  describe('NavBar component', () => {
-    let wrapper, mockText, mockLink;
+  let wrapper, mockText, mockLink;
 
-    beforeEach(() => {
-      mockText = 'Study';
-      mockLink = '/study';
-      wrapper = shallow(<NavBtn
-          text={mockText}
-          link={mockLink}
-        />);
-    });
+  beforeEach(() => {
+    mockText = 'Study';
+    mockLink = '/study';
+    wrapper = shallow(<NavBtn
+        text={mockText}
+        link={mockLink}
+      />);
+  });
 
-    it('should match snapshot', () => {
-      expect(wrapper).toMatchSnapshot();
-    });
+  it('should match snapshot', () => {
+    expect(wrapper).toMatchSnapshot();
   });
 });

@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavBar should match snapshot 1`] = `
+<header
+  className="nav-header"
+>
+  <h2
+    className="App-header"
+  >
+    African
+    <span
+      aria-label="heart emoji"
+      className="header-heart"
+      role="img"
+    >
+      ♥️
+    </span>
+    This App
+  </h2>
+  <div
+    className="div-nav-btns"
+  >
+    <NavBtn
+      link="/"
+      text="Home"
+    />
+    <NavBtn
+      link="/study"
+      text="Study"
+    />
+    <NavBtn
+      link="/quiz"
+      text="Quiz"
+    />
+  </div>
+</header>
+`;

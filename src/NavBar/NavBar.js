@@ -6,9 +6,9 @@ import { NavBtn } from '../NavBtn/NavBtn';
 export const NavBar = () => {
   return(
     <header className='nav-header'>
-
       <h2 className="App-header">African
-      <span role='img' aria-label='heart emoji' className='header-heart'>♥️</span>
+        <span role='img' aria-label='heart emoji' className='header-heart'>♥️
+        </span>
       This App</h2>
       <div className='div-nav-btns'>
         <NavBtn text={'Home'} link={'/'}/>
