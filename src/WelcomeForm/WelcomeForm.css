@@ -22,7 +22,7 @@
 }
 
 input[type='radio'] {
-  transform: scale(.9);
+  transform: scale(.7);
   float: left;
 }
 
@@ -40,6 +40,19 @@ input[type='radio'] {
 .title-welcome-info {
   font-size: 1.3em;
   color: #f28242;
+}
+
+.p-fine-question {
+  margin: 21% 0 5% 0;
+  color: #f28242;
+  font-size: .7em;
+
+}
+
+.p-fine-print {
+  font-size: .7em;
+  font-style: italic;
+  /* color: whitesmoke; */
 }
 
 .div-welcome-page-buttons {

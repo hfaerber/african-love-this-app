@@ -37,8 +37,8 @@ export class WelcomeForm extends Component {
         </div>
         <div className='div-welcome-info'>
           <section className='section-radio'>
-            <h4 className='title-welcome-info'>Why are you here {this.state.name ?
-              `${this.state.name}` : ''}?</h4>
+            <h4 className='title-welcome-info'>Why are you here {this.state.name
+               ? `${this.state.name}` : ''}?</h4>
               <input type='radio' id='bored' className='button-radio'/>
               <label forhtml='bored' className='label-radio'>
               Bored
@@ -59,19 +59,24 @@ export class WelcomeForm extends Component {
               Deeply ashamed of my lack of knowledge around World Geography and
                 ready to change that
             </label>
+            <p className='p-fine-question'>Do you really have to enter your name
+              and choose why you're here?</p>
+            <p className='p-fine-print'>Nah, you can skip it if you want</p>
           </section>
           <section className='section-instructions'>
             <h4 className='title-welcome-info'>What can you do here?</h4>
             <ul className='list-instructions'>
-              <li>Study the map of Africa to learn country names and capital cities</li>
-              <li>Study and track learning with study cards for each country (with
-              capital city and region)</li>
+              <li>Study the map of Africa to learn country names and capital
+                cities</li>
+              <li>Study and track learning with study cards for each country
+                (with capital city and region)</li>
               <li>Search for a specific country card by country name</li>
-              <li>Once a country and it's capital is commited to memory, click the
-              'Got It!' button to mark it as learned.</li>
-              <li>Card status will reset upon any refresh to force you to practice -
-              even the ones you've learned!</li>
-              <li>Filter by 'Still Learning' cards, 'Got It' cards, or all cards</li>
+              <li>Once a country and it's capital is commited to memory, click
+                the 'Got It!' button to mark it as learned.</li>
+              <li>Card status will reset upon any refresh to force you to
+                practice - even the ones you've learned!</li>
+              <li>Filter by 'Still Learning' cards, 'Got It' cards, or all
+                cards</li>
             </ul>
           </section>
         </div>

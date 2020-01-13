@@ -91,6 +91,16 @@ exports[`WelcomeForm should match the snapshot 1`] = `
       >
         Deeply ashamed of my lack of knowledge around World Geography and ready to change that
       </label>
+      <p
+        className="p-fine-question"
+      >
+        Do you really have to enter your name and choose why you're here?
+      </p>
+      <p
+        className="p-fine-print"
+      >
+        Nah, you can skip it if you want
+      </p>
     </section>
     <section
       className="section-instructions"
@@ -219,6 +229,16 @@ exports[`WelcomeForm should match the snapshot when user has entered their name 
       >
         Deeply ashamed of my lack of knowledge around World Geography and ready to change that
       </label>
+      <p
+        className="p-fine-question"
+      >
+        Do you really have to enter your name and choose why you're here?
+      </p>
+      <p
+        className="p-fine-print"
+      >
+        Nah, you can skip it if you want
+      </p>
     </section>
     <section
       className="section-instructions"
