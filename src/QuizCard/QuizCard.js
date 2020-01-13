@@ -12,16 +12,11 @@ export class QuizCard extends Component {
 
   checkAnswer = (event) => {
     if (event.target.name === this.props.capital) {
-      console.log('correct!')
       this.setState({ answerClass: 'correct'})
-      return true
     } else {
-      console.log('nope!')
       this.setState({ answerClass: 'incorrect'})
-
-      return false
     }
-  }
+  };
 
 
   render() {
@@ -38,7 +33,6 @@ export class QuizCard extends Component {
       </div>
     )
   }
-
 }
 
 export default QuizCard;
@@ -46,5 +40,6 @@ export default QuizCard;
 QuizCard.propTypes = {
   name: PropTypes.string,
   capital: PropTypes.string,
-  region: PropTypes.string
+  region: PropTypes.string,
+  answers: PropTypes.array
 }

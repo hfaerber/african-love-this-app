@@ -1,5 +1,4 @@
 .quiz-container {
-  border: 1px solid orange;
   display: flex;
   flex-wrap: wrap;
   padding-bottom: 5%;
