@@ -12,7 +12,15 @@ describe('WelcomeForm', () => {
     />);
     mockEvent = { target: { value: 'test value' } };
   });
-  // add snapshot
+
+  it('should match the snapshot', () => {
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should match the snapshot when user has entered their name', () => {
+    wrapper.setState({ name: 'Ben' });
+    expect(wrapper).toMatchSnapshot();
+  });
 
   it('should invoke handleChange on change', () => {
     wrapper.instance().handleChange = jest.fn();
@@ -35,4 +43,4 @@ describe('WelcomeForm', () => {
     wrapper.instance().handleChange(mockEvent);
     expect(mockUpdateUser).toHaveBeenCalledWith('test value');
   });
-})
+});
