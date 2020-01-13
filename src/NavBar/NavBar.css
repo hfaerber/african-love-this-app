@@ -1,7 +1,6 @@
 .nav-header {
   width:98%;
   text-align: center;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -9,12 +8,4 @@
 
 .div-nav-btns {
   display: flex;
-}
-
-#Study,
-#Quiz,
-#Home {
-  width: 90px;
-  font-size: .7em;
-  margin: none;
 }

@@ -43,14 +43,16 @@ export class WelcomeForm extends Component {
             Deeply ashamed of my lack of knowledge around World Geography and ready to change that
           </label>
         </div>
-        <NavBtn
-          text='Study'
-          link='/study'
-        />
-        <NavBtn
-          text='Quiz'
-          link='/quiz'
-        />
+        <div className='div-welcome-page-buttons'>
+          <NavBtn
+            text='Study'
+            link='/study'
+          />
+          <NavBtn
+            text='Quiz'
+            link='/quiz'
+          />
+        </div>
       </div>
     )
   }

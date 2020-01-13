@@ -33,3 +33,10 @@ input[type='radio'] { transform: scale(1.5); }
   font-size: 1.3em;
   color: #f28242;
 }
+
+.div-welcome-page-buttons {
+  width: 29%;
+  margin: 2% auto;
+  display: flex;
+  justify-content: space-around;
+}

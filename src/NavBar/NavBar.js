@@ -1,6 +1,6 @@
 import React from 'react';
 import './NavBar.css';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { NavBtn } from '../NavBtn/NavBtn';
 
 export const NavBar = () => {
@@ -11,7 +11,7 @@ export const NavBar = () => {
         </span>
       This App</h2>
       <div className='div-nav-btns'>
-        <NavBtn text={'Home'} link={'/'}/>
+        <Link to='/' className='button-nav'>Home</Link>
         <NavBtn text={'Study'} link={'/study'}/>
         <NavBtn text={'Quiz'} link={'/quiz'}/>
       </div>

@@ -1,9 +1,17 @@
 .button-nav {
-  width: 18%;
   background-color: #ef9e69;
-  font-size: 2em;
-  margin: 2% 1%;
   border: 3px ridge #f28242;
   border-radius: 10px;
   cursor: pointer;
+  width: 90px;
+  font-size: .7em;
+  margin: none;
+  text-decoration: none;
+  color: black;
+}
+
+.active {
+  transform: scale(1.2);
+  text-decoration: none;
+  background-color: #f28242;
 }

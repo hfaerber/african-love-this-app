@@ -4,10 +4,8 @@ import './NavBtn.css';
 
 export const NavBtn = ({ text, link }) => {
   return(
-    <NavLink to={link}>
-      <button type='button' className='button-nav' id={text}>
+    <NavLink to={link} className='button-nav'>
         {text}
-      </button>
     </NavLink>
   )
 }
