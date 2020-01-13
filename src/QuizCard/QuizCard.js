@@ -6,9 +6,11 @@ export class QuizCard extends Component {
   constructor() {
     super();
       this.state = {
-        capital: ''
+        answers: []
       }
   }
+
+
 
   render() {
     const {name, capital, region} = this.props;

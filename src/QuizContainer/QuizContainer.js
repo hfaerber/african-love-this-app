@@ -23,21 +23,38 @@ export class QuizContainer extends Component {
   };
 
   handleShuffle = () => {
-    let deck =  this.shuffleCountries([...this.props.countries]).splice(0, 10);
-    console.log('deck', deck);
-    console.log('postsplit', this.props.countries);
+
+    let deckstart =  this.shuffleCountries([...this.props.countries]).splice(0, 10);
+
+    let deck = deckstart.map((country, index) => {
+      let fake = [...deckstart];
+      let indexOf = fake.findIndex(c => c === country)
+      let incorrect = indexOf === 0 ? fake[fake.length - 1].capital : fake[index - 1].capital
+      return { name: country.name,
+               capital: country.capital,
+               subregion: country.subregion,
+               incorrectCapital: incorrect}
+    });
     this.setState({ shuffledCountries: deck });
   };
+
+
+
+
 
   render() {
 
     const quizCards = this.state.shuffledCountries.map(country => {
+      let answers = [country.capital, country.incorrectCapital];
+      this.shuffleCountries(answers);
       return (
         <QuizCard
         key={country.capital}
         name={country.name}
         capital={country.capital}
         region={country.subregion}
+        incorrectCapital={country.incorrectCapital}
+        answers={answers}
         />
       )
     });
@@ -63,3 +80,11 @@ export default connect(mapStateToProps, null)(QuizContainer);
 QuizContainer.propTypes = {
   countries: PropTypes.array
 }
+
+// <QuizCard
+// key={country.capital}
+// name={country.name}
+// capital={country.capital}
+// incorrect={CAN THIS BE A FUNCTION INVOCATION??}
+// region={country.subregion}
+// />
