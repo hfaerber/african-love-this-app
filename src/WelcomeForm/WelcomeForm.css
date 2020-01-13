@@ -16,7 +16,7 @@
 
 .input-name {
   font-size: 1em;
-  margin: 4%;
+  margin: 3%;
   border-radius: 3px;
   padding-left: 5px;
 }
@@ -43,7 +43,7 @@ input[type='radio'] {
 }
 
 .div-welcome-page-buttons {
-  width: 29%;
+  width: 26%;
   margin: auto;
   display: flex;
   justify-content: space-around;
