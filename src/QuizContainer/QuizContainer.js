@@ -26,8 +26,6 @@ export class QuizContainer extends Component {
     this.setState({ shuffledCountries: deck });
   };
 
-
-
   render() {
 
     const quizCards = this.state.shuffledCountries.map(country => {
@@ -42,7 +40,8 @@ export class QuizContainer extends Component {
     });
     return (
       <>
-      <button onClick={this.handleShuffle}>shuffle</button>
+      <button className='button-new-game'
+        onClick={this.handleShuffle}>shuffle</button>
       <div className='quiz-container'>
         {quizCards}
       </div>
