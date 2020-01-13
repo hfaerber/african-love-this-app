@@ -4,6 +4,7 @@ import { fetchCountryData } from '../apiCalls.js';
 import { cleanData } from '../util';
 import WelcomeForm from '../WelcomeForm/WelcomeForm';
 import StudyContainer from '../StudyContainer/StudyContainer';
+import QuizContainer from '../QuizContainer/QuizContainer';
 import NoMatch from '../NoMatch/NoMatch';
 import { Route, Switch } from 'react-router-dom';
 import { updateCountries, updateError, updateLoadingStatus } from '../actions';
@@ -29,6 +30,7 @@ export class App extends Component {
         <Switch>
           <Route exact path='/' component={WelcomeForm} />
           <Route path='/study' component={StudyContainer} />
+          <Route path='/quiz' component={QuizContainer} />
           <Route component={NoMatch} />
         </Switch>
       </main>
