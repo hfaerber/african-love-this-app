@@ -1,6 +1,7 @@
 import React from 'react';
-import { WelcomeForm } from './WelcomeForm';
+import { WelcomeForm, mapDispatchToProps } from './WelcomeForm';
 import { shallow } from 'enzyme';
+import { updateUser } from '../actions';
 
 describe('WelcomeForm', () => {
   let wrapper, mockEvent, mockUpdateUser;
@@ -43,4 +44,14 @@ describe('WelcomeForm', () => {
     wrapper.instance().handleChange(mockEvent);
     expect(mockUpdateUser).toHaveBeenCalledWith('test value');
   });
+
+  describe('mapDispatchToProps', () => {
+    it('should call dispatch with an updateUser action when updateUser is called', () => {
+      const mockDispatch = jest.fn();
+      const actionToDispatch = updateUser('Ben');
+      const mappedProps = mapDispatchToProps(mockDispatch);
+      mappedProps.updateUser('Ben');
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
+    })
+  })
 });
