@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './QuizContainer.css';
 import { connect } from 'react-redux';
-import { QuizCard } from '../QuizCard/Quizcard';
+import { QuizCard } from '../QuizCard/QuizCard';
 
 export class QuizContainer extends Component {
   constructor() {
@@ -12,29 +12,41 @@ export class QuizContainer extends Component {
   }
 
   shuffleCountries(countries) {
-      for (let i = countries.length - 1; i > 0; i--) {
-          const j = Math.floor(Math.random() * (i + 1));
-          [countries[i], countries[j]] = [countries[j], countries[i]];
-      }
+    for (let i = countries.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [countries[i], countries[j]] = [countries[j], countries[i]];
+    }
     return countries
-  }
+  };
 
   handleShuffle = () => {
-    let deck =  this.shuffleCountries([...this.props.countries]).splice(0, 15);
+    let deck =  this.shuffleCountries([...this.props.countries]).splice(0, 10);
     console.log('deck', deck);
     console.log('postsplit', this.props.countries);
     this.setState({ shuffledCountries: deck });
-  }
+  };
 
-  let quizCards = this.state.shuffleCountries.map(country => {
-    return (
-      <QuizCard />
-    )
-  })
+
 
   render() {
+
+    const quizCards = this.state.shuffledCountries.map(country => {
+      return (
+        <QuizCard
+        key={country.capital}
+        name={country.name}
+        capital={country.capital}
+        region={country.subregion}
+        />
+      )
+    });
     return (
+      <>
       <button onClick={this.handleShuffle}>shuffle</button>
+      <div className='quiz-container'>
+        {quizCards}
+      </div>
+      </>
     )
   }
 }
