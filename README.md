@@ -36,3 +36,4 @@ and to filter by region.  A quiz or quizzes to test user's learning would be
 added as well. 
 
 ## See It In Action
+![african-love-giphy](https://user-images.githubusercontent.com/48163945/72302159-057c9600-3661-11ea-9856-09f8a44d2078.gif)
